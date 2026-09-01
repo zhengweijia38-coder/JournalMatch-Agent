@@ -1,0 +1,66 @@
+{
+  "case_id": "12",
+  "source_pdf": "12.pdf",
+  "paper_profile": {
+    "title": "3D Gaussian Splatting for Real-Time Radiance Field Rendering",
+    "abstract": "Radiance Field methods have recently revolutionized novel-view synthesis of scenes captured with multiple photos or videos. However, achieving high visual quality still requires neural networks that are costly to train and render, while recent faster methods inevitably trade off speed for quality. For unbounded and complete scenes (rather than isolated objects) and 1080p resolution rendering, no current method can achieve real-time display rates. We introduce three key elements that allow us to achieve state-of-the-art visual quality while maintaining competitive training times and importantly allow high-quality real-time (≥ 30 fps) novel-view synthesis at 1080p resolution. First, starting from sparse points produced during camera calibration, we represent the scene with 3D Gaussians that preserve desirable properties of continuous volumetric radiance fields for scene optimization while avoiding unnecessary computation in empty space; Second, we perform interleaved optimization/density control of the 3D Gaussians, notably optimizing anisotropic covariance to achieve an accurate representation of the scene; Third, we develop a fast visibility-aware rendering algorithm that supports anisotropic splatting and both accelerates training and allows real-time rendering. We demonstrate state-of-the-art visual quality and real-time rendering on several established datasets.",
+    "keywords": [
+      "novel view synthesis",
+      "radiance fields",
+      "3D gaussians",
+      "real-time rendering",
+      "anisotropic splatting",
+      "tile-based rasterization"
+    ],
+    "research_fields": [
+      "Computer Vision",
+      "Computer Graphics",
+      "Machine Learning"
+    ],
+    "research_problem": "Achieving high-quality novel-view synthesis with real-time rendering at 1080p resolution and competitive training times, which previous radiance field methods could not simultaneously provide for unbounded and complete scenes.",
+    "methods": [
+      "3D Gaussian scene representation",
+      "Anisotropic covariance optimization",
+      "Interleaved optimization with adaptive density control (clone and split densification)",
+      "Spherical harmonics for view-dependent color",
+      "Tile-based differentiable rasterizer with GPU radix sort",
+      "Alpha-blending of anisotropic splats with visibility ordering",
+      "Stochastic gradient descent optimization with L1 and D-SSIM loss"
+    ],
+    "datasets": [
+      "Mip-NeRF360 dataset",
+      "Tanks&Temples dataset",
+      "Deep Blending dataset (Hedman et al. 2018)",
+      "Synthetic Blender dataset (Mildenhall et al. 2020)"
+    ],
+    "main_contributions": [
+      "Introduction of anisotropic 3D Gaussians as a high-quality, unstructured representation of radiance fields",
+      "An optimization method of 3D Gaussian properties interleaved with adaptive density control that creates high-quality representations for captured scenes",
+      "A fast, differentiable, visibility-aware rendering approach for the GPU that allows anisotropic splatting and fast backpropagation for high-quality novel view synthesis"
+    ],
+    "claimed_innovations": [
+      "First approach to truly allow real-time, high-quality radiance field rendering across a wide variety of scenes and capture styles with training times competitive with the fastest previous methods",
+      "Demonstration that a continuous representation is not strictly necessary for fast and high-quality radiance field training",
+      "3D Gaussian representation that avoids the need for MVS geometry and normals, using only SfM points as input",
+      "Rasterizer that respects visibility ordering and allows an unlimited number of splats to receive gradients, avoiding hard limits present in previous work"
+    ],
+    "experimental_results": [
+      "Ours-30K achieves PSNR 27.21, SSIM 0.815, LPIPS 0.214 on Mip-NeRF360 dataset, on par with or slightly better than Mip-NeRF360 (PSNR 27.69, SSIM 0.792, LPIPS 0.237)",
+      "Ours-30K achieves PSNR 23.14, SSIM 0.841, LPIPS 0.183 on Tanks&Temples and PSNR 29.41, SSIM 0.903, LPIPS 0.243 on Deep Blending",
+      "Real-time rendering at 135 fps (7K) and 93 fps (30K) on Mip-NeRF360 scenes, compared to 0.071 fps for Mip-NeRF360",
+      "Training time of 6-7 minutes (7K) and 35-45 minutes (30K), compared to 48 hours for Mip-NeRF360",
+      "On synthetic Blender dataset, Ours-30K achieves average PSNR 33.32, best among compared methods, rendered at 180-300 FPS",
+      "Ablation: limiting gradient computation to 10 Gaussians degraded PSNR by 11dB on Truck scene",
+      "Compactness: surpasses Zhang et al. 2022 metrics with approximately one-fourth of their point count, average model size 3.8 MB vs 9 MB"
+    ],
+    "limitations": [
+      "Artifacts in regions where the scene is not well observed",
+      "Can create elongated artifacts or 'splotchy' Gaussians",
+      "Occasional popping artifacts when optimization creates large Gaussians, partly due to trivial guard-band rejection and simple visibility algorithm",
+      "No regularization applied to optimization, which would help with unseen region and popping artifacts",
+      "Reducing the position learning rate can be necessary to converge in very large scenes (e.g., urban datasets)",
+      "Memory consumption significantly higher than NeRF-based solutions; peak GPU memory can exceed 20 GB during training of large scenes in the unoptimized prototype"
+    ],
+    "summary": "This paper introduces 3D Gaussian Splatting, a method for real-time radiance field rendering that achieves state-of-the-art visual quality with competitive training times. The method represents scenes using a set of 3D Gaussians initialized from sparse Structure-from-Motion (SfM) points, each defined by position, opacity, anisotropic covariance, and spherical harmonic coefficients. Three key components are introduced: (1) 3D Gaussians as a flexible, explicit, differentiable volumetric scene representation that avoids computation in empty space; (2) interleaved optimization and adaptive density control (clone and split operations) that optimizes anisotropic covariance for accurate scene representation; and (3) a fast, visibility-aware, tile-based differentiable rasterizer using GPU radix sort that supports anisotropic splatting with alpha-blending and allows an unlimited number of splats to receive gradients. The method is evaluated on the Mip-NeRF360, Tanks&Temples, Deep Blending, and synthetic Blender datasets. Results show quality on par with or slightly better than Mip-NeRF360 (the previous quality state-of-the-art) while achieving real-time rendering at 93-135 fps and training times of 35-45 minutes (compared to 48 hours for Mip-NeRF360). Ablations demonstrate the importance of SfM initialization, clone/split densification, anisotropic covariance, spherical harmonics, and unlimited gradient depth complexity. The authors note limitations including artifacts in poorly observed regions, popping artifacts, and higher memory consumption than NeRF-based solutions."
+  }
+}

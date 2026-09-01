@@ -1,0 +1,67 @@
+{
+  "case_id": "19",
+  "source_pdf": "19.pdf",
+  "paper_profile": {
+    "title": "Slide Rule: Making Mobile Touch Screens Accessible to Blind People Using Multi-Touch Interaction Techniques",
+    "abstract": "Recent advances in touch screen technology have increased the prevalence of touch screens and have prompted a wave of new touch screen-based devices. However, touch screens are still largely inaccessible to blind users, who must adopt error-prone compensatory strategies to use them or find accessible alternatives. This inaccessibility is due to interaction techniques that require the user to visually locate objects on the screen. To address this problem, we introduce Slide Rule, a set of audio-based multi-touch interaction techniques that enable blind users to access touch screen applications. We describe the design of Slide Rule, our interaction techniques, and a user study in which 10 blind people used Slide Rule and a button-based Pocket PC screen reader. Results show that Slide Rule was significantly faster than the button-based system, and was preferred by 7 of 10 users. However, users made more errors when using Slide Rule than when using the more familiar button-based system.",
+    "keywords": [
+      "Accessibility",
+      "blindness",
+      "mobile devices",
+      "touch screens",
+      "multi-touch interaction techniques",
+      "speech output"
+    ],
+    "research_fields": [
+      "Human-Computer Interaction",
+      "Accessibility"
+    ],
+    "research_problem": "Touch screens are largely inaccessible to blind users because interaction techniques require users to visually locate objects on the screen. The paper addresses this by developing audio-based multi-touch interaction techniques that enable blind users to access touch screen applications.",
+    "methods": [
+      "One-finger scan gesture",
+      "Second-finger tap selection gesture",
+      "Multi-directional flick gesture",
+      "L-select gesture",
+      "Double-tap gesture",
+      "Lift-then-tap gesture",
+      "Slip timer for second-finger tap",
+      "User-centered design process with formative interviews and iterative prototyping"
+    ],
+    "datasets": [
+      "Sample data set of 10 phone book contacts, 10 e-mail messages, and 10 albums containing 105 songs"
+    ],
+    "main_contributions": [
+      "Introduction of Slide Rule, a set of audio-based multi-touch interaction techniques enabling blind users to access touch screen applications",
+      "Design of four basic gesture interactions (one-finger scan, second-finger tap, multi-directional flick, L-select) plus double-tap",
+      "Implementation of three prototype applications (Phone, Mail, Music) using the techniques",
+      "User study showing Slide Rule was significantly faster than a button-based Pocket PC screen reader and preferred by 7 of 10 users"
+    ],
+    "claimed_innovations": [
+      "A completely non-visual interface that repurposes a touch screen as a talking touch-sensitive surface",
+      "Requires only a standard multi-touch screen and audio output, with no additional hardware",
+      "Second-finger tap selection that reduces the accuracy demands of tapping by selecting the target beneath the first finger",
+      "L-select gesture for browsing hierarchical data with a single gesture",
+      "Design principles including risk-free exploration, finger-resolution operation, and intuitive gestural mappings"
+    ],
+    "experimental_results": [
+      "Slide Rule was significantly faster than the Pocket PC: mean task time 11.69 seconds (SD=5.77) vs 12.79 seconds (SD=7.58), F(1,9)=5.68, p<.05",
+      "Slide Rule was the faster technique for 6 of 10 participants",
+      "Users made more errors with Slide Rule: average 0.20 errors per trial (SD=0.56); no participants made errors using the Pocket PC (z=-3.80, p<.001)",
+      "17 out of 120 (14.1%) Slide Rule tasks contained errors",
+      "Listening time per item was significantly lower for Slide Rule (0.95s) than Pocket PC (1.42s), F(1,8)=68.88, p<.001",
+      "7 of 10 participants preferred Slide Rule to the Pocket PC",
+      "Questionnaire items significantly higher for Pocket PC: Easy to use, Felt in control, Easy to learn, and Familiar",
+      "Application had a significant effect on time (F(2,18)=59.80, p<.001); Phone was faster than Mail and Music, Mail faster than Music",
+      "No significant main effect of Application on errors (chi2(2,N=40)=3.67, p=.16)"
+    ],
+    "limitations": [
+      "Users made more errors with Slide Rule than with the button-based system, resulting in a speed-accuracy tradeoff",
+      "Participants were not touch screen users and none had used a multi-touch device before, which may have contributed to errors",
+      "Small data sample set was used to reduce experiment duration",
+      "Some participants expressed skepticism that flat touch screens without a tangible grid could be accessible to blind users",
+      "The lift-then-tap gesture was added but not used in the experiment",
+      "A longer study is necessary to better understand the strengths and limitations of the method"
+    ],
+    "summary": "The paper introduces Slide Rule, a set of audio-based multi-touch interaction techniques that make touch screen mobile devices accessible to blind users. Slide Rule provides a completely non-visual interface that repurposes a touch screen as a talking touch-sensitive surface, requiring only a standard multi-touch screen and audio output with no additional hardware. It uses four basic gesture interactions: a one-finger scan to browse lists, a second-finger tap to select items, a multi-directional flick for additional actions, and an L-select gesture for browsing hierarchical information, plus a double-tap gesture. The design was informed by formative interviews with 8 blind mobile device users and iterative prototyping with 3 blind users, guided by design principles including risk-free exploration, finger-resolution operation, reduced selection accuracy demands, quick browsing, intuitive gestural mappings, and the ability to query location and return home. The techniques were implemented in three prototype applications (Phone, Mail, Music) on an Apple iPhone. A user study with 10 blind participants compared Slide Rule against a button-based Pocket PC running Mobile Speak Pocket. Results showed Slide Rule was significantly faster (11.69s vs 12.79s mean task time), with significantly lower listening time per item, and was preferred by 7 of 10 participants. However, users made more errors with Slide Rule (0.20 errors per trial vs none for the Pocket PC), reflecting a speed-accuracy tradeoff. Questionnaire results showed the Pocket PC was rated significantly higher on ease of use, feeling in control, ease of learning, and familiarity, yet participants still preferred Slide Rule. The paper discusses design implications, the cost of errors, and future work including composite interaction techniques, text entry methods, support for larger displays, and applicability to sighted users in eyes-free contexts."
+  }
+}

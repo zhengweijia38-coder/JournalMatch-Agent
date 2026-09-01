@@ -1,0 +1,55 @@
+{
+  "case_id": "08",
+  "source_pdf": "08.pdf",
+  "paper_profile": {
+    "title": "Defects4J: A Database of Existing Faults to Enable Controlled Testing Studies for Java Programs",
+    "abstract": "Empirical studies in software testing research may not be comparable, reproducible, or characteristic of practice. One reason is that real bugs are too infrequently used in software testing research. Extracting and reproducing real bugs is challenging and as a result hand-seeded faults or mutants are commonly used as a substitute. This paper presents Defects4J, a database and extensible framework providing real bugs to enable reproducible studies in software testing research. The initial version of Defects4J contains 357 real bugs from 5 real-world open source programs. Each real bug is accompanied by a comprehensive test suite that can expose (demonstrate) that bug. Defects4J is extensible and builds on top of each program's version control system. Once a program is configured in Defects4J, new bugs can be added to the database with little or no effort. Defects4J features a framework to easily access faulty and fixed program versions and corresponding test suites. This framework also provides a high-level interface to common tasks in software testing research, making it easy to conduct and reproduce empirical studies. Defects4J is publicly available at http://defects4j.org.",
+    "keywords": [
+      "Bug database",
+      "real bugs",
+      "testing framework"
+    ],
+    "research_fields": [
+      "Software Engineering"
+    ],
+    "research_problem": "Empirical studies in software testing research are often not comparable, reproducible, or characteristic of practice because real bugs are too infrequently used, with hand-seeded faults or mutants commonly used as substitutes. The paper addresses the challenge of extracting, reproducing, and isolating real bugs from version control history to enable reproducible testing studies.",
+    "methods": [
+      "Automated identification of bug-fixing commits from version control and bug tracking systems",
+      "Automated reproduction of bugs by removing failing tests and executing test suites on faulty versions",
+      "Manual review and isolation of bug fixes from source code diffs",
+      "Database abstraction layer for version control and build systems",
+      "Test execution framework with components for test monitoring, test suite manipulation, test generation (EvoSuite), mutation analysis (Major), and code coverage analysis (Cobertura, CodeCover)"
+    ],
+    "datasets": [
+      "JFreeChart (26 bugs)",
+      "Closure Compiler (133 bugs)",
+      "Commons Math (106 bugs)",
+      "Joda-Time (27 bugs)",
+      "Commons Lang (65 bugs)"
+    ],
+    "main_contributions": [
+      "A new approach for reproducing and isolating real bugs from version control history, where isolation means the bug fix does not include irrelevant changes such as features or refactorings",
+      "A populated database of 357 isolated real bugs for 5 large open source programs, designed to be extensible",
+      "A database abstraction layer providing a uniform interface for checking out faulty and fixed program versions and uniform access to build and execution targets",
+      "A test execution framework with components for common tasks in software testing research such as test execution, test generation, and code coverage or mutation analysis"
+    ],
+    "claimed_innovations": [
+      "New approach for reproducing and isolating real bugs from version control history",
+      "Extensible database built on top of projects' version control systems, allowing new bugs to be added with little or no effort",
+      "Database abstraction layer abstracting heterogeneous version control and build systems",
+      "Test execution framework providing a uniform interface to external testing tools (Cobertura, CodeCover, EvoSuite, Major)"
+    ],
+    "experimental_results": [
+      "Defects4J's initial version contains 357 real bugs from 5 open source programs: JFreeChart (26), Closure Compiler (133), Commons Math (106), Joda-Time (27), Commons Lang (65)",
+      "The 5 programs range between 22,000 and 96,000 LOC, with a total of 20,109 test KLoc and 211 test years of development",
+      "All bugs were reproduced using a Java 7 runtime environment and the OpenJDK JVM",
+      "The build system configuration of the included programs changed at most 4 times over a development period of 12 years"
+    ],
+    "limitations": [
+      "Adding a new program to Defects4J requires a one-time manual effort for providing a program-specific wrapper build file",
+      "Creating intermediate build files for a specific program requires manual effort (though it is a one-time effort)",
+      "Automated inclusion of a new bug requires that the build system configuration does not change, the bug fix does not include features and refactorings, and the fixed version is accompanied by at least one exposing test case"
+    ],
+    "summary": "This paper presents Defects4J, a database and extensible framework that provides real bugs to enable reproducible, controlled testing studies for Java programs. The initial version contains 357 real bugs from 5 large open source programs (JFreeChart, Closure Compiler, Commons Math, Joda-Time, Commons Lang). Each bug is accompanied by a comprehensive test suite with at least one test that exposes the bug (passes on the fixed version but fails on the faulty version). The paper describes a methodology for reproducing and isolating real bugs from version control history: automated identification of bug-fixing commits, automated reproduction by removing failing tests and executing suites on faulty versions, and manual review/isolation of bug fixes to exclude unrelated changes such as features or refactorings. Defects4J provides a database abstraction layer that abstracts heterogeneous version control and build systems, giving uniform access to faulty and fixed program versions and build targets. It also features a test execution framework with components for monitoring test execution, test suite manipulation, test generation (using EvoSuite), mutation analysis (using Major), and code coverage analysis (using Cobertura and CodeCover). The paper compares Defects4J to related work including SIR, iBugs, and the Siemens benchmark suite, highlighting advantages in number of real bugs, isolation of bugs, and the comprehensive test execution framework. Future work includes adding more programs and bugs and improving bug metadata with classification."
+  }
+}

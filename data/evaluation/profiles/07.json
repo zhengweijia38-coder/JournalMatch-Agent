@@ -1,0 +1,70 @@
+{
+  "case_id": "07",
+  "source_pdf": "07.pdf",
+  "paper_profile": {
+    "title": "Deep Learning with Differential Privacy",
+    "abstract": "Machine learning techniques based on neural networks are achieving remarkable results in a wide variety of domains. Often, the training of models requires large, representative datasets, which may be crowdsourced and contain sensitive information. The models should not expose private information in these datasets. Addressing this goal, we develop new algorithmic techniques for learning and a refined analysis of privacy costs within the framework of differential privacy. Our implementation and experiments demonstrate that we can train deep neural networks with non-convex objectives, under a modest privacy budget, and at a manageable cost in software complexity, training efficiency, and model quality.",
+    "keywords": [
+      "differential privacy",
+      "deep learning",
+      "neural networks",
+      "moments accountant",
+      "stochastic gradient descent",
+      "privacy accounting"
+    ],
+    "research_fields": [
+      "Machine Learning",
+      "Computer Vision",
+      "Cybersecurity"
+    ],
+    "research_problem": "How to train deep neural networks with non-convex objectives under a modest (\"single-digit\") differential privacy budget, providing rigorous privacy guarantees for models trained on sensitive crowdsourced datasets, while keeping costs in software complexity, training efficiency, and model quality manageable.",
+    "methods": [
+      "Differentially private stochastic gradient descent (SGD)",
+      "Moments accountant",
+      "Gradient norm clipping",
+      "Gaussian noise mechanism",
+      "Per-example gradient computation",
+      "Differentially private PCA",
+      "Numerical integration for privacy loss moments",
+      "Pre-trained convolutional layers",
+      "Mini-batch SGD"
+    ],
+    "datasets": [
+      "MNIST",
+      "CIFAR-10",
+      "CIFAR-100"
+    ],
+    "main_contributions": [
+      "Demonstrates that tracking higher moments of the privacy loss yields much tighter estimates of overall privacy loss, both asymptotically and empirically",
+      "Improves computational efficiency of differentially private training via efficient per-example gradient algorithms, subdividing tasks into smaller batches to reduce memory footprint, and applying differentially private principal projection at the input layer",
+      "Builds on the TensorFlow machine learning framework for training models with differential privacy",
+      "Introduces the moments accountant, a privacy accounting method that provides tighter bounds than the strong composition theorem, saving a sqrt(log(1/delta)) factor in epsilon and a Tq factor in delta",
+      "Demonstrates training deep neural networks with non-convex objectives under a modest privacy budget on MNIST and CIFAR-10"
+    ],
+    "claimed_innovations": [
+      "The moments accountant, which tracks higher moments of the privacy loss and provides tighter privacy bounds than the strong composition theorem",
+      "Proof that Algorithm 1 is (O(q*epsilon*sqrt(T)), delta)-differentially private, saving a sqrt(log(1/delta)) factor in epsilon and a Tq factor in delta compared to strong composition",
+      "Efficient per_example_gradient operator in TensorFlow for computing individual example gradients",
+      "Application of moments accounting to composing Gaussian mechanisms with random sampling"
+    ],
+    "experimental_results": [
+      "With q=0.01, sigma=4, delta=10^-5, T=10000, the moments accountant gives epsilon≈1.26 versus epsilon≈9.34 using the strong composition theorem",
+      "For E=100, moments accountant gives epsilon=1.26 vs 9.34 for strong composition; for E=400, 2.55 vs 24.22",
+      "On MNIST, achieves 90%, 95%, and 97% test accuracy for (0.5, 10^-5), (2, 10^-5), and (8, 10^-5)-differential privacy respectively",
+      "On MNIST, achieves 90% accuracy for epsilon=0.25 and delta=0.01",
+      "On MNIST, non-private baseline reaches 98.30% accuracy in about 100 epochs",
+      "On CIFAR-10, achieves 67%, 70%, and 73% accuracy with epsilon being 2, 4, and 8 respectively (delta=10^-5)",
+      "On CIFAR-10, non-private baseline is approximately 80% accuracy; private model drops about 7% in accuracy compared to baseline",
+      "PCA projection reduces input size from 784 to 60, leading to almost 10x reduction in training time",
+      "Best lot size empirically is roughly sqrt(N) where N is the number of training examples",
+      "Accuracy is stable for learning rate in range [0.01, 0.07] and peaks at 0.05"
+    ],
+    "limitations": [
+      "Current per-example gradient implementation supports batched computation where each xi is singly connected to L, allowing most hidden layers but not convolutional layers",
+      "Efficient per-example gradient computation for convolutional layers remains a challenge within the TensorFlow framework",
+      "On CIFAR-10, the drop in accuracy between non-private baseline and private model is much larger (about 7%) compared to MNIST (about 1.3%)",
+      "Initial experiments with decreasing noise as training progresses did not show significant improvement"
+    ],
+    "summary": "This paper presents a framework for training deep neural networks with differential privacy guarantees. The authors develop a differentially private stochastic gradient descent (SGD) algorithm that clips per-example gradient norms and adds Gaussian noise, combined with a new privacy accounting method called the moments accountant. The moments accountant tracks higher moments of the privacy loss random variable, providing tighter privacy bounds than the strong composition theorem—saving a sqrt(log(1/delta)) factor in epsilon and a Tq factor in delta. The approach is implemented in TensorFlow, including an efficient per-example gradient operator, a privacy accountant, and differentially private PCA. Experiments on MNIST and CIFAR-10 demonstrate that deep networks with non-convex objectives can be trained under modest (\"single-digit\") privacy budgets: on MNIST, 97% test accuracy is achieved with (8, 10^-5)-differential privacy, and on CIFAR-10, 73% accuracy with (8, 10^-5)-differential privacy. The paper also analyzes the effect of hyperparameters such as lot size, noise level, learning rate, clipping bound, PCA dimensions, and number of hidden units on accuracy under privacy constraints."
+  }
+}

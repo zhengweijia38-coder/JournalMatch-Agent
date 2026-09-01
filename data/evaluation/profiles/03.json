@@ -1,0 +1,61 @@
+{
+  "case_id": "03",
+  "source_pdf": "03.pdf",
+  "paper_profile": {
+    "title": "Processing in Storage Class Memory",
+    "abstract": "Storage and memory technologies are experiencing unprecedented transformation. Storage-class memory (SCM) delivers near-DRAM performance in non-volatile storage media and became commercially available in 2019. Unfortunately, software is not yet able to fully benefit from such high-performance storage. Processing-in-memory (PIM) aims to overcome the notorious memory wall; at the time of writing, hardware is close to being commercially available. This paper takes a position that PIM will become an integral part of future storage-class memories, so data processing can be performed in-storage, saving memory bandwidth and CPU cycles. Under that assumption, we identify typical data-processing tasks poised for in-storage processing, such as compression, encryption and format conversion. We present evidence supporting our assumption and present some feasibility experiments on new PIM hardware to show the potential.",
+    "keywords": [
+      "Processing-in-Memory",
+      "Storage Class Memory",
+      "Non-Volatile Memory",
+      "Data Processing Units",
+      "In-Storage Processing",
+      "Compression",
+      "Format Parsing"
+    ],
+    "research_fields": [
+      "Computer Architecture",
+      "Storage Systems"
+    ],
+    "research_problem": "The paper addresses the scalability problem in the storage subsystem, where CPU cycles and memory bandwidth become bottlenecks as storage performance increases. It proposes using Processing-in-Memory (PIM) processors integrated with Storage Class Memory (SCM) to offload simple data-processing tasks (e.g., compression, encryption, format conversion) from the host CPU to in-storage processors.",
+    "methods": [
+      "Processing-in-Memory (PIM) architecture using UPMEM Data Processing Units (DPUs)",
+      "Snappy decompression algorithm implemented on PIM hardware",
+      "SIMDJSON multi-line parsing benchmark",
+      "WiredTiger wtperf performance suite",
+      "DMA-based data copy benchmark for throughput measurement"
+    ],
+    "datasets": [
+      "TPC-DS benchmark suite (store_sales JSON data)",
+      "Snappy test files (terror2, plrabn12, world192, xml, sao, dickens, nci, mozilla, spamfile)"
+    ],
+    "main_contributions": [
+      "Recognizing the opportunity to use PIM to solve scalability issues for low-latency persistent storage",
+      "Identifying typical data-processing tasks poised for in-storage processing, such as compression, encryption, and format conversion",
+      "Providing motivating experiments with two applications (format parsing and storage compression)",
+      "Presenting microbenchmarks on new PIM hardware (UPMEM) to assess the feasibility of the idea",
+      "Proposing a wishlist of features for future PIM on SCM architectures, including data triggered functions, concurrent memory access, mix of memory types, and tuning for performance"
+    ],
+    "claimed_innovations": [
+      "Proposing the concept of data triggered functions, where a host CPU triggers a function execution on the DPU by reading from a memory address owned by that DPU",
+      "Positioning that PIM will become an integral part of future storage-class memories, enabling in-storage data processing",
+      "Demonstrating that PIM on SCM offers benefits including freeing the bus, scalable processing, and post-processing of stored data"
+    ],
+    "experimental_results": [
+      "Format parsing experiment: parsing 14GB of JSON store_sales from TPC-DS, on NVRAM the test takes 26s with 11s (42%) of parse time, on HDD it takes 80s with 11s (13%) of parse time; SIMDJSON operates at 1.3 GB/s in these tests",
+      "Storage compression experiment: compression overhead is higher on NVRAM than on HDD (by at least 3%) for 17 of the 35 benchmark/operations; only 4 benchmark/operations suffer higher compression overhead on HDD than on NVRAM",
+      "Snappy decompression benchmark: with the largest file size, a speedup of nearly 4.5x using only 172 DPUs; with the smallest file, a slowdown of 100% (2x longer than the CPU)",
+      "Throughput measurement: copied 36 GB in 0.14 seconds for a total throughput of approximately 252 GB/sec, more than 13x larger than the maximum theoretical bandwidth of a single DDR4-2400 channel (19 GB/sec); with expected maximum frequency of 500 MHz, bandwidth advantage would increase up to 20x"
+    ],
+    "limitations": [
+      "DPUs can only access data in their own bank, and byte-level striping across banks causes each DPU to see only every 8th byte of data, requiring API functions to reorder bytes",
+      "There is no direct communication channel between DPUs, so the host must carefully control the dataset and plan execution before processing begins due to the high cost of synchronization",
+      "Virtual memory page mapping directly into the application address space is currently not possible due to striping limitations",
+      "DPUs are permanently tied to a specific memory range, preventing the use of sector migration for wear levelling on SCM",
+      "The PIM architecture cannot arbitrate between individual accesses from multiple sources; the DPU and CPU cannot operate on the same memory rank concurrently",
+      "The Snappy decompression implementation has not yet been fully optimized",
+      "The measurement of Snappy decompression does not take I/O time into account"
+    ],
+    "summary": "This position paper argues that Processing-in-Memory (PIM) will become an integral part of future Storage Class Memory (SCM) systems, enabling data processing to be performed in-storage to save memory bandwidth and CPU cycles. The authors identify typical data-processing tasks suited for in-storage processing, including compression, encryption, and format conversion. They describe the UPMEM PIM hardware architecture (Data Processing Units embedded in DRAM) as a proxy for future PIM on SCM, discussing design considerations such as inter-PIM communication, address translation, core density, and instruction set. They propose a wishlist for future PIM architectures including data triggered functions, concurrent memory access, mixing of memory types, and performance tuning. Feasibility experiments show that format parsing overhead is higher relative to total time on NVRAM (42%) than on HDD (13%), and that compression overhead is higher on NVRAM than HDD for 17 of 35 benchmark operations. A Snappy decompression implementation on PIM hardware achieved a speedup of nearly 4.5x with the largest file using 172 DPUs, and a throughput measurement showed approximately 252 GB/sec, more than 13x the theoretical bandwidth of a single DDR4-2400 channel. The paper concludes that PIM on SCM is a promising direction for offloading simple tasks to free CPU cycles and memory bus cycles."
+  }
+}

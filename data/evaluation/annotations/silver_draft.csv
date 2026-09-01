@@ -1,0 +1,139 @@
+case_id,journal_id,journal_name,silver_relevance,draft_reason,human_review_status
+01,,IEEE Transactions on Computers,3,DRAM可靠性与体系结构机制高度匹配,pending
+01,,ACM Transactions on Architecture and Code Optimization,3,内存体系结构和低开销缓解机制高度匹配,pending
+01,,ACM Transactions on Computer Systems,2,真实系统中的内存隔离与硬件软件交互匹配,pending
+01,,IEEE Transactions on Dependable and Secure Computing,2,Rowhammer同时涉及系统可靠性和安全性,pending
+01,,ACM Transactions on Storage,2,DRAM器件可靠性及刷新机制与存储系统范围相关,pending
+01,,Computers & Security,1,安全影响明确但体系结构内容占比更高,pending
+02,,ACM Transactions on Computer Systems,3,生产级Paxos数据库与计算机系统实践高度匹配,pending
+02,,IEEE Transactions on Parallel and Distributed Systems,3,共识协议和容错分布式系统高度匹配,pending
+02,,Distributed Computing,2,Paxos算法及分布式容错机制匹配,pending
+02,,Journal of Parallel and Distributed Computing,2,分布式系统实现与性能评估匹配,pending
+02,,IEEE Transactions on Dependable and Secure Computing,2,故障恢复和高可用系统主题匹配,pending
+02,,ACM Transactions on Database Systems,2,容错数据库实现相关但论文侧重系统工程,pending
+02,,Software: Practice and Experience,1,生产经验与工程教训适合实践型范围,pending
+03,,ACM Transactions on Storage,3,存储级内存和存内处理高度匹配,pending
+03,,ACM Journal on Emerging Technologies in Computing Systems,3,新型存储器件与PIM架构高度匹配,pending
+03,,IEEE Transactions on Computers,3,PIM计算机体系结构与系统评估高度匹配,pending
+03,,ACM Transactions on Architecture and Code Optimization,2,体系结构和数据处理卸载匹配,pending
+03,,IEEE Transactions on Parallel and Distributed Systems,2,并行DPU处理与可扩展性相关,pending
+03,,CCF Transactions on High Performance Computing,1,高吞吐PIM实验相关但存储主题更核心,pending
+04,,IEEE Transactions on Networking,3,软件定义广域网与流量工程高度匹配,pending
+04,,Computer Networks,3,WAN架构路由和性能实验高度匹配,pending
+04,,IEEE Journal on Selected Areas in Communications,2,大型网络流量工程与通信网络范围匹配,pending
+04,,IEEE Transactions on Network and Service Management,2,集中式控制和网络运营管理匹配,pending
+04,,ACM Transactions on Internet Technology,2,全球互联网基础设施和SDN系统相关,pending
+04,,Journal of Network and Computer Applications,1,网络应用系统相关但工程架构主题更强,pending
+05,,ACM Transactions on Sensor Networks,3,无线传感网络数据收集协议高度匹配,pending
+05,,IEEE Transactions on Mobile Computing,3,低功耗无线网络路由和实验评估高度匹配,pending
+05,,IEEE Internet of Things Journal,2,传感器与物联网数据收集机制匹配,pending
+05,,Ad Hoc Networks,2,自组织无线网络路由协议匹配,pending
+05,,Wireless Networks,2,无线网络协议和链路质量适配相关,pending
+05,,Computer Networks,1,网络协议范围匹配但传感网络针对性较弱,pending
+06,,IEEE Transactions on Networking,3,RDMA和SmartNIC远程内存通信高度匹配,pending
+06,,IEEE Transactions on Computers,3,远程内存接口与体系结构设计高度匹配,pending
+06,,ACM Transactions on Computer Systems,2,硬件软件协同的远程内存系统匹配,pending
+06,,IEEE Transactions on Parallel and Distributed Systems,2,分布式内存访问与性能主题匹配,pending
+06,,Computer Networks,2,网络传输和RDMA机制相关,pending
+06,,Journal of Parallel and Distributed Computing,1,分布式计算适用但网络体系结构更核心,pending
+07,,ACM Transactions on Privacy and Security,3,差分隐私机制与隐私保护学习高度匹配,pending
+07,,IEEE Transactions on Dependable and Secure Computing,3,隐私保护机器学习和安全保证匹配,pending
+07,,IEEE Transactions on Information Forensics and Security,2,隐私分析与安全学习方法相关,pending
+07,,Journal of Machine Learning Research,2,深度学习优化和隐私会计方法匹配,pending
+07,,Machine Learning,2,隐私约束下的学习算法与理论匹配,pending
+07,,Artificial Intelligence,1,机器学习贡献相关但隐私主题更专门,pending
+08,,IEEE Transactions on Software Engineering,3,真实缺陷数据库和软件测试研究基础设施高度匹配,pending
+08,,ACM Transactions on Software Engineering and Methodology,3,软件测试方法与可复现实证研究高度匹配,pending
+08,,"Software Testing, Verification and Reliability",3,缺陷库和受控测试研究直接匹配,pending
+08,,Empirical Software Engineering,2,真实Java缺陷与实证研究设计匹配,pending
+08,,Automated Software Engineering,2,自动化测试和故障定位应用相关,pending
+08,,Journal of Systems and Software,1,软件质量与测试范围相关但针对性较弱,pending
+09,,Empirical Software Engineering,3,GitHub挖掘偏差和实证方法高度匹配,pending
+09,,IEEE Transactions on Software Engineering,3,软件仓库挖掘与研究方法论高度匹配,pending
+09,,ACM Transactions on Software Engineering and Methodology,2,软件工程数据采集与有效性问题匹配,pending
+09,,Journal of Software: Evolution and Process,2,软件演化和仓库历史分析相关,pending
+09,,Information and Software Technology,2,软件工程实证研究和实践建议匹配,pending
+09,,Software: Practice and Experience,1,GitHub实践经验相关但方法论主题更核心,pending
+10,,IEEE Transactions on Knowledge and Data Engineering,3,大规模图表示学习和网络数据挖掘高度匹配,pending
+10,,Data Mining and Knowledge Discovery,3,节点表示和图挖掘方法高度匹配,pending
+10,,ACM Transactions on Knowledge Discovery from Data,3,可扩展网络特征学习高度匹配,pending
+10,,Machine Learning,2,表示学习和随机游走优化匹配,pending
+10,,Journal of Machine Learning Research,2,通用图机器学习方法相关,pending
+10,,ACM Transactions on Intelligent Systems and Technology,2,图表示及下游智能任务匹配,pending
+10,,Information Sciences,1,信息网络分析范围相关但专门性较弱,pending
+11,,ACM Transactions on Algorithms,3,动态图算法与摊还复杂度高度匹配,pending
+11,,SIAM Journal on Computing,3,严格图算法理论与复杂度分析高度匹配,pending
+11,,Algorithmica,3,图算法和数据结构主题高度匹配,pending
+11,,Journal of Computer and System Sciences,2,理论计算机科学和动态图算法匹配,pending
+11,,Theory of Computing Systems,2,图算法与计算理论匹配,pending
+11,,Theoretical Computer Science,2,动态图和图分隔理论相关,pending
+11,,Information Processing Letters,1,理论结果相关但成果篇幅和深度需人工判断,pending
+12,,ACM Transactions on Graphics,3,新视角合成和实时渲染高度匹配,pending
+12,,Computer Graphics Forum,3,三维表示与实时图形渲染高度匹配,pending
+12,,IEEE Transactions on Visualization and Computer Graphics,3,三维场景表示和可视化渲染匹配,pending
+12,,International Journal of Computer Vision,2,多视图重建和新视角合成相关,pending
+12,,IEEE Transactions on Pattern Analysis and Machine Intelligence,2,学习式三维视觉方法相关,pending
+12,,Computers & Graphics,2,实时渲染实现与图形应用匹配,pending
+12,,The Visual Computer,1,三维视觉与图形范围匹配但选择性较宽,pending
+13,,"IEEE Transactions on Audio, Speech and Language Processing",3,端到端语音识别架构高度匹配,pending
+13,,Computer Speech & Language,3,语音识别和语言处理技术高度匹配,pending
+13,,Speech Communication,3,声学建模与自动语音识别高度匹配,pending
+13,,Transactions of the Association for Computational Linguistics,2,序列建模和Transformer方法相关,pending
+13,,Computational Linguistics,2,语言建模贡献相关但语音内容更核心,pending
+13,,Neural Networks,2,卷积增强Transformer神经架构匹配,pending
+13,,"Journal of Speech, Language, and Hearing Research",1,语音研究相关但工程识别系统并非唯一重点,pending
+14,,IEEE Transactions on Computers,3,与case 01相同论文且DRAM可靠性高度匹配,pending
+14,,ACM Transactions on Architecture and Code Optimization,3,与case 01相同论文且内存体系结构高度匹配,pending
+14,,ACM Transactions on Computer Systems,2,与case 01相同论文且系统交互主题匹配,pending
+14,,IEEE Transactions on Dependable and Secure Computing,2,与case 01相同论文且可靠安全计算匹配,pending
+14,,ACM Transactions on Storage,2,与case 01相同论文且存储可靠性相关,pending
+14,,Computers & Security,1,与case 01相同论文且安全影响相关,pending
+15,,Transactions of the Association for Computational Linguistics,3,词向量和计算语言学方法高度匹配,pending
+15,,Computational Linguistics,3,词表示与语义规律高度匹配,pending
+15,,Journal of Machine Learning Research,3,通用表示学习与优化方法匹配,pending
+15,,Machine Learning,2,无监督词表示学习算法匹配,pending
+15,,Natural Language Engineering,2,词向量在NLP系统中的应用相关,pending
+15,,ACM Transactions on Intelligent Systems and Technology,2,表示学习与智能应用匹配,pending
+15,,Information Sciences,1,向量表示方法相关但范围较宽,pending
+16,,Journal of Machine Learning Research,3,深核学习和可扩展高斯过程高度匹配,pending
+16,,Machine Learning,3,核方法与深度表示联合学习高度匹配,pending
+16,,IEEE Transactions on Neural Networks and learning systems,3,深度神经特征和概率核学习匹配,pending
+16,,Neural Computation,2,神经网络和核学习理论相关,pending
+16,,Artificial Intelligence,2,通用机器学习模型创新相关,pending
+16,,Neurocomputing,2,深度学习与高斯过程结合匹配,pending
+16,,Pattern Recognition,1,分类表示学习相关但核方法主题更通用,pending
+17,,ACM Transactions on Computer-Human Interaction,3,Human-AI交互设计指南高度匹配,pending
+17,,ACM Transactions on Interactive Intelligent Systems,3,AI交互系统设计与评估高度匹配,pending
+17,,International Journal of Human-Computer Studies,3,人机交互设计原则和用户研究高度匹配,pending
+17,,Human-Computer Interaction,2,Human-AI交互理论与设计实践匹配,pending
+17,,Proceedings of the ACM on Human-Computer Interaction,2,HCI实证研究与设计知识匹配,pending
+17,,User Modeling and User-Adapted Interaction,2,智能系统适应性和用户需求相关,pending
+17,,Behaviour & Information Technology,1,人与AI系统行为关系相关但范围更宽,pending
+18,,ACM Transactions on Computer-Human Interaction,3,与case 17相同论文且Human-AI交互高度匹配,pending
+18,,ACM Transactions on Interactive Intelligent Systems,3,与case 17相同论文且智能交互系统高度匹配,pending
+18,,International Journal of Human-Computer Studies,3,与case 17相同论文且HCI设计原则高度匹配,pending
+18,,Human-Computer Interaction,2,与case 17相同论文且交互理论和实践匹配,pending
+18,,Proceedings of the ACM on Human-Computer Interaction,2,与case 17相同论文且实证HCI研究匹配,pending
+18,,User Modeling and User-Adapted Interaction,2,与case 17相同论文且自适应交互相关,pending
+18,,Behaviour & Information Technology,1,与case 17相同论文且人机行为关系相关,pending
+19,,ACM Transactions on Computer-Human Interaction,3,无障碍触屏交互和用户研究高度匹配,pending
+19,,International Journal of Human-Computer Studies,3,盲人用户交互设计与对照实验高度匹配,pending
+19,,Proceedings of the ACM on Human-Computer Interaction,3,无障碍HCI实证研究高度匹配,pending
+19,,Interacting with Computers,2,触摸交互技术和可用性评估匹配,pending
+19,,International Journal of Human-Computer Interaction,2,移动无障碍交互和用户体验匹配,pending
+19,,Personal and Ubiquitous Computing,2,移动触屏和非视觉普适交互相关,pending
+19,,Behaviour & Information Technology,1,无障碍用户行为与技术关系相关,pending
+20,,IEEE Transactions on Knowledge and Data Engineering,3,大规模信息网络嵌入高度匹配,pending
+20,,ACM Transactions on Knowledge Discovery from Data,3,网络表示学习和可扩展图挖掘高度匹配,pending
+20,,Data Mining and Knowledge Discovery,3,图结构特征学习高度匹配,pending
+20,,Machine Learning,2,无监督表示学习目标与优化匹配,pending
+20,,Journal of Machine Learning Research,2,通用网络嵌入方法相关,pending
+20,,ACM Transactions on Information Systems,2,信息网络表示及下游信息任务相关,pending
+20,,Information Sciences,1,网络分析和降维范围匹配但较宽,pending
+21,,ACM Transactions on Recommender Systems,3,社交关系推断和推荐应用高度匹配,pending
+21,,ACM Transactions on Information Systems,3,用户建模和社交信息检索高度匹配,pending
+21,,IEEE Transactions on Knowledge and Data Engineering,3,轨迹挖掘和多标签预测高度匹配,pending
+21,,GeoInformatica,2,位置轨迹数据挖掘和空间信息分析匹配,pending
+21,,ACM Transactions on the Web,2,位置社交网络与Web社交计算相关,pending
+21,,Information Sciences,2,深度多标签学习和轨迹分析匹配,pending
+21,,Pervasive and Mobile Computing,1,移动轨迹和位置感知应用相关,pending

@@ -1,0 +1,5 @@
+name,ccf_rank,research_fields,keywords,aims_scope,jcr_quartile,cas_quartile,impact_factor
+Example Journal of Visual Computing,A,Computer Vision;Machine Learning,image segmentation;image recognition,Synthetic demonstration venue for computer vision methods and applications.,Q1,1,9.9
+Example Transactions on Language Systems,B,Natural Language Processing;Information Retrieval,large language models;retrieval augmented generation,Synthetic demonstration venue for language processing and information access.,Q1,2,6.5
+Example Software Engineering Review,B,Software Engineering,software testing;program analysis;bug detection,Synthetic demonstration venue for software engineering methods and empirical studies.,Q2,3,4.2
+Example Data and Knowledge Journal,C,Databases;Data Mining,data management;knowledge discovery,Synthetic demonstration venue for data management and knowledge discovery research.,Q2,3,3.8

@@ -1,0 +1,61 @@
+{
+  "case_id": "21",
+  "source_pdf": "21.pdf",
+  "paper_profile": {
+    "title": "Trajectory-based Social Circle Inference",
+    "abstract": "Learning explicit and implicit patterns in human trajectories plays an important role in many Location-Based Social Networks (LBSNs) applications, such as trajectory classification (e.g., walking, driving, etc.), trajectory-user linking, friend recommendation, etc. A particular problem that has attracted much attention recently – and is the focus of our work – is the Trajectory-based Social Circle Inference (TSCI), aiming at inferring user social circles (mainly social friendship) based on motion trajectories and without any explicit social networked information. Existing approaches addressing TSCI lack satisfactory results due to the challenges related to data sparsity, accessibility and model efficiency. Motivated by the recent success of machine learning in trajectory mining, in this paper we formulate TSCI as a novel multi-label classification problem and develop a Recurrent Neural Network (RNN)-based framework called DeepTSCI to use human mobility patterns for inferring corresponding social circles. We propose three methods to learn the latent representations of trajectories, based on: (1) bidirectional Long Short-Term Memory (LSTM); (2) Autoencoder; and (3) Variational autoencoder. Experiments conducted on real-world datasets demonstrate that our proposed methods perform well and achieve significant improvement in terms of macro-R, macro-F1 and accuracy when compared to baselines.",
+    "keywords": [
+      "trajectory mining",
+      "variational auto-encoder",
+      "social circle inference"
+    ],
+    "research_fields": [
+      "Machine Learning",
+      "Information Retrieval",
+      "Recommender Systems"
+    ],
+    "research_problem": "Inferring users' social circles (friendships) based solely on their motion trajectories, without any explicit social network information, formulated as a multi-label classification problem. The problem faces challenges of data sparsity, varying sociability, and difficulty in feature exploitation.",
+    "methods": [
+      "DeepTSCI framework",
+      "Bidirectional Long Short-Term Memory (LSTM)",
+      "Autoencoder",
+      "Variational Autoencoder (VAE)",
+      "Continuous Bag-of-Words (CBOW) check-in embedding",
+      "Hierarchical softmax",
+      "Multi-label classifier (Friend Decoder)",
+      "Dropout (variational inference based)",
+      "KL cost annealing",
+      "Reparameterization trick"
+    ],
+    "datasets": [
+      "Brightkite",
+      "Gowalla",
+      "Foursquare (Tokyo)",
+      "Foursquare (New York)"
+    ],
+    "main_contributions": [
+      "First attempt to address the Trajectory-Social Circle Inference problem using deep neural networks in the context of LBSN",
+      "Leveraging both check-in embedding to a low dimensional space and trajectory embedding to improve performance, with pre-training of all sub-trajectories using autoencoder",
+      "Using latent variables in VAE to approximate the distribution of trajectory friendship, improving social circle inference performance",
+      "Experiments on real datasets demonstrating effectiveness and robustness in terms of macro-R, macro-F1 and accuracy compared to state-of-the-art baselines"
+    ],
+    "claimed_innovations": [
+      "Formulating TSCI as a novel multi-label classification problem",
+      "DeepTSCI framework integrating RNN and VAE variants to learn latent trajectory patterns for social circle inference",
+      "Incorporating unlabeled data via autoencoder pre-training to improve performance",
+      "Combining latent variable z with hidden states for friend prediction in VAE-based method"
+    ],
+    "experimental_results": [
+      "DeepTSCI-VAE outperforms all other methods for all metrics in RT-TSCI, gaining up to 6.66%, 2.48% and 4.12% over RandomForest in Gowalla",
+      "DeepTSCI-VAE achieves the best performance in RU-TSCI; in New York dataset it improves up to 2.71%, 1.58% and 1.23% over TULER, and 1.32%, 0.65% and 0.60% over Bi-DeepTSCI",
+      "Bi-DeepTSCI and DeepTSCI-VAE obtain the best performance among proposed models",
+      "AE-based pre-training increases accuracy while loss decreases; VAE-based pre-training makes convergence faster for both RT-TSCI and RU-TSCI",
+      "Accuracy of TSCI is proportional to the number of iterations (epochs)"
+    ],
+    "limitations": [
+      "RU-TSCI macro-R, macro-F1, and accuracy are relatively low for all methods, attributed to the cold start problem since no information about new users is available except several short sub-trajectories",
+      "DeepTSCI-LSTM performs a little worse compared to baselines in the New York dataset"
+    ],
+    "summary": "The paper addresses Trajectory-based Social Circle Inference (TSCI), the problem of inferring users' social circles (friendships) based purely on their motion trajectories without any explicit social network information. The authors formulate TSCI as a multi-label classification problem and propose DeepTSCI, an RNN-based framework with three variants: DeepTSCI-LSTM/Bi-DeepTSCI (using LSTM and bidirectional LSTM), DeepTSCI-AE (using autoencoder pre-training), and DeepTSCI-VAE (using variational autoencoder). The framework embeds check-ins into low-dimensional vectors via CBOW with hierarchical softmax, splits trajectories into sub-trajectories, and uses a Friend Decoder multi-label classifier to predict friendship sets. Two subtasks are studied: RT-TSCI (predicting friends for existing users) and RU-TSCI (predicting friends for new users). Experiments on Brightkite, Gowalla, and Foursquare (Tokyo and New York) datasets show that DeepTSCI-VAE achieves the best performance across macro-R, macro-F1, and accuracy compared to baselines including Co-Visit, MF, Decision Trees, SVM, RandomForest, MLP, TULER, and DeepMIML. The authors note that RU-TSCI performance is relatively low due to a cold-start-like problem. Future work includes incorporating semantic inter-relationships among friends and reinforcement learning methods."
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "case_id": "01",
+  "source_pdf": "01.pdf",
+  "paper_profile": {
+    "title": "Flipping Bits in Memory Without Accessing Them: An Experimental Study of DRAM Disturbance Errors",
+    "abstract": "Memory isolation is a key property of a reliable and secure computing system — an access to one memory address should not have unintended side effects on data stored in other addresses. However, as DRAM process technology scales down to smaller dimensions, it becomes more difficult to prevent DRAM cells from electrically interacting with each other. In this paper, we expose the vulnerability of commodity DRAM chips to disturbance errors. By reading from the same address in DRAM, we show that it is possible to corrupt data in nearby addresses. More specifically, activating the same row in DRAM corrupts data in nearby rows. We demonstrate this phenomenon on Intel and AMD systems using a malicious program that generates many DRAM accesses. We induce errors in most DRAM modules (110 out of 129) from three major DRAM manufacturers. From this we conclude that many deployed systems are likely to be at risk. We identify the root cause of disturbance errors as the repeated toggling of a DRAM row's wordline, which stresses inter-cell coupling effects that accelerate charge leakage from nearby rows. We provide an extensive characterization study of disturbance errors and their behavior using an FPGA-based testing platform. Among our key findings, we show that (i) it takes as few as 139K accesses to induce an error and (ii) up to one in every 1.7K cells is susceptible to errors. After examining various potential ways of addressing the problem, we propose a low-overhead solution to prevent the errors.",
+    "keywords": [
+      "DRAM",
+      "disturbance errors",
+      "row hammer",
+      "memory reliability",
+      "memory security",
+      "PARA",
+      "probabilistic adjacent row activation"
+    ],
+    "research_fields": [
+      "Computer Architecture",
+      "Memory Systems",
+      "Cybersecurity"
+    ],
+    "research_problem": "The paper investigates DRAM disturbance errors, a phenomenon where repeatedly activating (opening/closing) the same DRAM row corrupts data stored in nearby rows, violating memory isolation. It aims to expose the widespread existence of these errors in commodity DRAM chips, characterize their behavior, identify their root cause, and propose a low-overhead solution to prevent them.",
+    "methods": [
+      "FPGA-based testing platform with DDR3-800 memory controller",
+      "TestBulk and TestEach test procedures",
+      "User-level assembly program (Code 1a) inducing DRAM accesses",
+      "PARA (probabilistic adjacent row activation) mechanism",
+      "Binomial distribution error probability analysis",
+      "Cycle-accurate DRAM simulator for performance evaluation"
+    ],
+    "datasets": [
+      "129 DDR3 DRAM modules (972 DRAM chips) from three anonymized manufacturers A, B, C",
+      "SPEC CPU2006",
+      "TPC",
+      "memory-intensive microbenchmarks"
+    ],
+    "main_contributions": [
+      "First paper to expose the widespread existence of disturbance errors in commodity DRAM chips from recent years",
+      "Constructs a user-level program that induces disturbance errors on real Intel/AMD systems, potentially breaching memory protection",
+      "Provides extensive characterization of DRAM disturbance errors using an FPGA-based testing platform and 129 DRAM modules",
+      "Identifies the root cause of disturbance errors as repeated toggling of a row's wordline",
+      "Proposes PARA, a low-overhead stateless mechanism to prevent disturbance errors"
+    ],
+    "claimed_innovations": [
+      "Demonstration that disturbance errors exist in 110 out of 129 DRAM modules from three major manufacturers",
+      "Identification of repeated wordline toggling as the root cause of disturbance errors",
+      "PARA (probabilistic adjacent row activation), a stateless low-overhead mechanism that refreshes adjacent rows with low probability each time a row is opened/closed",
+      "Finding that it takes as few as 139K activations to induce an error and up to one in 1.7K cells is susceptible"
+    ],
+    "experimental_results": [
+      "Disturbance errors induced in 110 out of 129 DRAM modules (836 chips); all modules manufactured in 2012 and 2013 were vulnerable",
+      "It takes as few as 139K activations to induce an error (Nth values: 139K, 155K, 284K for the three tested modules)",
+      "Up to one in every 1.7K cells is susceptible to errors",
+      "Bit-flips induced on real systems: Sandy Bridge 7,992 ('0'->'1') and 8,125 ('1'->'0'); Ivy Bridge 10,273 and 10,449; Haswell 11,404 and 11,467; Piledriver 47 and 12",
+      "Threshold refresh intervals (RIth) as low as 8.2ms, 9.8ms, and 14.7ms for the most vulnerable families, requiring 7.8x, 6.5x, and 4.3x increases in refresh frequency",
+      "Victim cells predominantly localized to two rows (immediate neighbors); only 2.53%, 0.0122%, and 0.00649% of aggressor rows affect three or more rows",
+      "SECDED cannot correct multi-bit errors: A23 had 181,856 words with 2 errors, 2,248 with 3 errors, 18 with 4 errors",
+      "Errors are mostly repeatable across iterations (78.3%, 74.4%, 73.2% of victim cells had errors in every iteration)",
+      "Weak cells and victim cells show little correlation (only 700, 220, and 19 weak cells were also victim cells)",
+      "Temperature has weak influence on errors: changes of +10.2%, -0.553%, +1.32% at 70C and -14.5%, +2.71%, -5.11% at 30C relative to 50C",
+      "PARA with p=0.001 and Nth=100K yields error probability of 9.4e-14 over one year",
+      "PARA causes only 0.197% average degradation in instruction throughput across 29 benchmarks (max 0.745%)"
+    ],
+    "limitations": [
+      "PARA does not guarantee that adjacent rows will always be refreshed in time, so it cannot prevent disturbance errors with absolute certainty",
+      "An exhaustive search for all victim cells could take several days or more of continuous testing",
+      "The paper cannot make definitive claims about how a wordline interacts with nearby cells at the device level without analyzing DRAM chips at the device level",
+      "The testing platform supports a maximum DRAM chip size of 2Gb",
+      "For multi-rank modules, only the first rank was tested"
+    ],
+    "summary": "This paper exposes and characterizes DRAM disturbance errors (the \"row hammer\" phenomenon), where repeatedly activating the same DRAM row corrupts data in nearby rows, violating memory isolation. The authors demonstrate the phenomenon on real Intel (Sandy Bridge, Ivy Bridge, Haswell) and AMD (Piledriver) systems using a user-level program that continuously reads from DRAM, inducing thousands of bit-flips. They identify the root cause as repeated toggling of a row's wordline, which stresses inter-cell coupling effects that accelerate charge leakage from nearby rows. Using an FPGA-based testing platform, they characterize 129 DDR3 DRAM modules (972 chips) from three major manufacturers, finding disturbance errors in 110 modules (836 chips), with all modules manufactured in 2012-2013 being vulnerable. Key findings include: it takes as few as 139K activations to induce an error, up to one in 1.7K cells is susceptible, victim cells are predominantly localized to the two immediately adjacent rows, errors affect only charged cells (causing them to discharge), and errors are mostly repeatable but not strongly correlated with weak cells or temperature. The paper examines six potential solutions (better chips, ECC, frequent refreshes, cell retirement by manufacturer or end-user, and hot-row detection) and finds them all limited. It then proposes PARA (probabilistic adjacent row activation), a stateless low-overhead mechanism where each time a row is opened/closed, an adjacent row is refreshed with low probability p. PARA provides a strong statistical guarantee against disturbance errors (error probability as low as 9.4e-14 over one year with p=0.001 and Nth=100K) while incurring only 0.197% average performance degradation across 29 benchmarks."
+  }
+}

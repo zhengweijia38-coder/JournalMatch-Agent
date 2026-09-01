@@ -1,0 +1,53 @@
+{
+  "case_id": "17",
+  "source_pdf": "17.pdf",
+  "paper_profile": {
+    "title": "Guidelines for Human-AI Interaction",
+    "abstract": "Advances in artificial intelligence (AI) frame opportunities and challenges for user interface design. Principles for human-AI interaction have been discussed in the human-computer interaction community for over two decades, but more study and innovation are needed in light of advances in AI and the growing uses of AI technologies in human-facing applications. We propose 18 generally applicable design guidelines for human-AI interaction. These guidelines are validated through multiple rounds of evaluation including a user study with 49 design practitioners who tested the guidelines against 20 popular AI-infused products. The results verify the relevance of the guidelines over a spectrum of interaction scenarios and reveal gaps in our knowledge, highlighting opportunities for further research. Based on the evaluations, we believe the set of design guidelines can serve as a resource to practitioners working on the design of applications and features that harness AI technologies, and to researchers interested in the further development of guidelines for human-AI interaction design.",
+    "keywords": [
+      "Human-AI interaction",
+      "AI-infused systems",
+      "design guidelines"
+    ],
+    "research_fields": [
+      "Human-Computer Interaction",
+      "Artificial Intelligence"
+    ],
+    "research_problem": "The paper addresses the lack of unified, validated design guidelines for human-AI interaction, given that AI-infused systems can violate established usability guidelines due to their probabilistic, inconsistent, and unpredictable behaviors.",
+    "methods": [
+      "Affinity diagramming",
+      "Modified heuristic evaluation",
+      "User study with heuristic evaluation",
+      "Expert evaluation",
+      "Maximum-variance sampling strategy"
+    ],
+    "datasets": [
+      "20 popular AI-infused products across 10 categories (e-commerce, navigation, music recommenders, activity trackers, autocomplete, social networks, email, voice assistants, photo organizers, web search)"
+    ],
+    "main_contributions": [
+      "A codification of over 150 AI-related design recommendations collected from academic and industry sources into a set of 18 generally applicable design guidelines for human-AI interaction",
+      "A systematic validation of the 18 guidelines through multiple rounds of iteration and testing"
+    ],
+    "claimed_innovations": [
+      "Proposing 18 generally applicable design guidelines for human-AI interaction organized into four temporal categories (Initially, During interaction, When wrong, Over time)",
+      "A four-phase development and validation process for the guidelines"
+    ],
+    "experimental_results": [
+      "Across 20 products, participants identified 785 examples of the 18 guidelines: 313 applications, 277 violations, 89 neutrals, and 106 instances of 'does not apply'",
+      "Participants found at least one application or violation of each guideline in each product category tested, suggesting broad evidence of the guidelines' relevance",
+      "Guideline 11 'Make clear why the system did what it did' had one of the highest numbers of violations despite active research in intelligibility and explanations",
+      "Guidelines 3, 5, and 6 had the highest number of 'does not apply' ratings",
+      "Guidelines 5 and 6 were noted as the least clear by participants",
+      "In the expert evaluation, experts preferred the revised versions for all guidelines except Guideline 15",
+      "Five experts still found Guidelines 1 and 2 somewhat difficult to distinguish after revision"
+    ],
+    "limitations": [
+      "The guidelines might not adequately address all types of AI-infused systems, such as those lacking graphical user interfaces (e.g., voice-based virtual assistants and activity trackers)",
+      "Specialized guidelines may be required in certain high-risk or highly regulated areas such as semi-autonomous vehicles, robot-assisted surgery, and financial systems",
+      "The work intentionally focused on AI design guidelines that could be easily evaluated by inspection of a system's interface, excluding broad principles such as 'build trust' and modeling-layer guidelines",
+      "The guidelines only begin to touch on topics of fairness and broader ethical considerations",
+      "Ethics-focused guidelines can be difficult to fully evaluate in a heuristic evaluation, and successful detection of problems may depend on who is performing the evaluation"
+    ],
+    "summary": "This CHI 2019 paper proposes and validates 18 generally applicable design guidelines for human-AI interaction. The authors synthesized over 150 AI-related design recommendations from academic and industry sources into a set of guidelines organized into four temporal categories: \"Initially\" (G1-G2), \"During interaction\" (G3-G6), \"When wrong\" (G7-G11), and \"Over time\" (G12-G18). The guidelines were developed and refined through a four-phase process: (1) consolidating guidelines from industry products, public articles, and scholarly papers via affinity diagramming; (2) an internal modified heuristic evaluation that reduced the set from 20 to 18 guidelines; (3) a user study with 49 HCI practitioners who tested the guidelines against 20 popular AI-infused products across 10 categories; and (4) an expert evaluation of the revisions with 11 experts. The user study found 785 examples of the guidelines (313 applications, 277 violations, 89 neutrals, 106 \"does not apply\"), demonstrating broad relevance across product categories. Key findings include that explanation-related guidelines (G11) had high violation counts, guidelines on social norms and biases (G5, G6) were least clear and most often rated \"does not apply,\" and voice assistants had the most \"does not apply\" instances. The authors discuss trade-offs between generality and specialization, note limitations for non-GUI systems and high-risk domains, and highlight the need for diverse evaluators to recognize social norms and biases."
+  }
+}

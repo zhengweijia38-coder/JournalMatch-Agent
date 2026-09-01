@@ -1,0 +1,71 @@
+{
+  "case_id": "16",
+  "source_pdf": "16.pdf",
+  "paper_profile": {
+    "title": "Deep Kernel Learning",
+    "abstract": "We introduce scalable deep kernels, which combine the structural properties of deep learning architectures with the non-parametric flexibility of kernel methods. Specifically, we transform the inputs of a spectral mixture base kernel with a deep architecture, using local kernel interpolation, inducing points, and structure exploiting (Kronecker and Toeplitz) algebra for a scalable kernel representation. These closed-form kernels can be used as drop-in replacements for standard kernels, with benefits in expressive power and scalability. We jointly learn the properties of these kernels through the marginal likelihood of a Gaussian process. Inference and learning cost O(n) for n training points, and predictions cost O(1) per test point. On a large and diverse collection of applications, including a dataset with 2 million examples, we show improved performance over scalable Gaussian processes with flexible kernel learning models, and stand-alone deep architectures.",
+    "keywords": [
+      "deep kernel learning",
+      "Gaussian processes",
+      "spectral mixture kernels",
+      "KISS-GP",
+      "kernel interpolation",
+      "Kronecker algebra",
+      "Toeplitz algebra",
+      "inducing points"
+    ],
+    "research_fields": [
+      "Machine Learning",
+      "Deep Learning",
+      "Kernel Methods"
+    ],
+    "research_problem": "How to combine the structural properties of deep learning architectures with the non-parametric flexibility of kernel methods to create scalable, expressive covariance kernels for Gaussian processes, overcoming the Euclidean/absolute distance limitations of standard kernels and the O(n^3) scaling of standard GPs.",
+    "methods": [
+      "Deep kernel learning (DKL)",
+      "Spectral mixture (SM) base kernels",
+      "RBF base kernels",
+      "KISS-GP approximation with local cubic kernel interpolation",
+      "Inducing points on a regular multidimensional lattice",
+      "Kronecker and Toeplitz structure exploiting algebra",
+      "Linear conjugate gradients (LCG) for inference",
+      "Backpropagation through the Gaussian process marginal likelihood",
+      "Deep feedforward fully-connected networks",
+      "Convolutional neural networks",
+      "Caffe-based DNN implementation"
+    ],
+    "datasets": [
+      "UCI regression datasets (Gas, Skillcraft, SML, Parkinsons, Pumadyn, PoleTele, Elevators, Kin40k, Protein, KEGG, CTslice, KEGGU, 3Droad, Song, Buzz, Electric)",
+      "Olivetti face dataset",
+      "MNIST digit dataset"
+    ],
+    "main_contributions": [
+      "Introduces scalable deep kernels that combine deep architecture structure with non-parametric kernel flexibility",
+      "Transforms inputs of a spectral mixture base kernel with a deep architecture using local kernel interpolation, inducing points, and Kronecker/Toeplitz algebra for scalable kernel representation",
+      "Provides closed-form kernels usable as drop-in replacements for standard kernels with O(n) training and O(1) per-test-point prediction cost",
+      "Jointly learns all deep kernel hyperparameters through the Gaussian process marginal likelihood",
+      "Demonstrates improved performance over scalable GPs, expressive kernel learning models, stand-alone deep architectures, and GPs applied to trained deep network outputs across a wide range of datasets"
+    ],
+    "claimed_innovations": [
+      "Combines deep feedforward and convolutional architectures with spectral mixture covariances, inducing points, Kronecker/Toeplitz algebra, and local kernel interpolation to derive expressive and scalable closed-form kernels",
+      "All parameters trained jointly with a unified supervised objective as part of a non-parametric Gaussian process framework without approximate Bayesian inference",
+      "Achieves scalability while retaining non-parametric model structure by leveraging KISS-GP",
+      "Deep kernel effectively has a hidden layer with an infinite number of hidden units (infinite adaptive basis functions)",
+      "Allows the whole functional form of the metric to be learned flexibly through expressive transformations of the input space"
+    ],
+    "experimental_results": [
+      "DKL consistently outperforms DNN and DNN+GP over all 16 UCI datasets",
+      "Using a spectral mixture base kernel provides notable additional performance improvements over RBF base kernel",
+      "KISS-GP imposes an additional runtime of about 10% over a stand-alone DNN",
+      "On Olivetti face orientation extraction, DKL achieves RMSE 6.07 vs DBN+GP 6.42, CNN 6.34, CNN+GP 6.42, GP 16.33",
+      "On MNIST digit magnitude extraction, DKL achieves RMSE 0.53 vs CNN 0.59, CNN+GP 0.56, DBN+GP 1.03, GP 1.25",
+      "DKL achieves roughly linear asymptotic scaling with slope of 1 in runtime as a function of training instances",
+      "DKL-SM accurately encodes discontinuities of a step function with reasonable uncertainty, unlike regular GPs with RBF or SM kernels",
+      "DKL scales to datasets with up to 2 million examples (Electric dataset)"
+    ],
+    "limitations": [
+      "Scalable Kronecker algebra is most effective if the network maps into D <= 5 dimensional spaces",
+      "The approach relies on pre-training a deep neural network before joint deep kernel learning"
+    ],
+    "summary": "The paper introduces scalable deep kernels that combine the structural properties of deep learning architectures with the non-parametric flexibility of kernel methods. The authors transform the inputs of a base kernel (RBF or spectral mixture) with a deep feedforward or convolutional architecture, then use local kernel interpolation, inducing points, and Kronecker/Toeplitz structure exploiting algebra (via the KISS-GP approximation) to create scalable closed-form covariance kernels for Gaussian processes. All deep kernel hyperparameters (network weights and base kernel parameters) are learned jointly by backpropagating derivatives through the Gaussian process marginal likelihood, without approximate Bayesian inference. The resulting model effectively has a hidden layer with an infinite number of adaptive basis functions, achieving O(n) training cost and O(1) per-test-point prediction cost. Experiments on a wide range of UCI regression datasets (including a 2-million-example dataset), Olivetti face orientation extraction, MNIST digit magnitude extraction, and step function recovery show that DKL consistently outperforms scalable Gaussian processes with expressive kernels, stand-alone deep neural networks, and GPs applied to the outputs of trained deep networks. The spectral mixture base kernel provides notable additional performance gains over RBF, and the learned kernels reveal interpretable structure (e.g., faces with similar rotation angles become highly correlated). The approach also naturally produces posterior predictive distributions, useful for applications such as reinforcement learning and Bayesian optimization."
+  }
+}

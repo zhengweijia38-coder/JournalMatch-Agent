@@ -1,0 +1,69 @@
+{
+  "case_id": "20",
+  "source_pdf": "20.pdf",
+  "paper_profile": {
+    "title": "LINE: Large-scale Information Network Embedding",
+    "abstract": "This paper studies the problem of embedding very large information networks into low-dimensional vector spaces, which is useful in many tasks such as visualization, node classification, and link prediction. Most existing graph embedding methods do not scale for real world information networks which usually contain millions of nodes. In this paper, we propose a novel network embedding method called the \"LINE,\" which is suitable for arbitrary types of information networks: undirected, directed, and/or weighted. The method optimizes a carefully designed objective function that preserves both the local and global network structures. An edge-sampling algorithm is proposed that addresses the limitation of the classical stochastic gradient descent and improves both the effectiveness and the efficiency of the inference. Empirical experiments prove the effectiveness of the LINE on a variety of real-world information networks, including language networks, social networks, and citation networks. The algorithm is very efficient, which is able to learn the embedding of a network with millions of vertices and billions of edges in a few hours on a typical single machine.",
+    "keywords": [
+      "information network embedding",
+      "scalability",
+      "feature learning",
+      "dimension reduction"
+    ],
+    "research_fields": [
+      "Machine Learning",
+      "Natural Language Processing",
+      "Social Network Analysis"
+    ],
+    "research_problem": "The problem of embedding very large information networks (with millions of nodes and billions of edges) into low-dimensional vector spaces while preserving both local (first-order) and global (second-order) network structures, in a way that scales to real-world networks.",
+    "methods": [
+      "LINE model with first-order proximity objective",
+      "LINE model with second-order proximity objective",
+      "Negative sampling",
+      "Asynchronous stochastic gradient descent (ASGD)",
+      "Edge-sampling algorithm using alias table method",
+      "Concatenation of first-order and second-order embeddings",
+      "Neighborhood expansion via second-order neighbors"
+    ],
+    "datasets": [
+      "Wikipedia word co-occurrence network",
+      "Flickr",
+      "Youtube",
+      "DBLP (AuthorCitation)",
+      "DBLP (PaperCitation)",
+      "DBLP co-author network"
+    ],
+    "main_contributions": [
+      "Proposes the LINE network embedding model that suits arbitrary types of information networks (undirected, directed, and/or weighted) and scales to millions of nodes",
+      "Designs objective functions that preserve both first-order and second-order proximities",
+      "Proposes an edge-sampling algorithm that addresses the limitation of classical stochastic gradient descent on weighted edges and improves effectiveness and efficiency of inference",
+      "Conducts extensive experiments on real-world information networks (language, social, and citation networks) proving effectiveness and efficiency"
+    ],
+    "claimed_innovations": [
+      "A network embedding model with carefully designed objective functions preserving both first-order and second-order proximities",
+      "An edge-sampling algorithm that tackles the limitation of classical stochastic gradient descent on weighted edges with high variance, improving effectiveness and efficiency",
+      "Breadth-first search strategy for second-order proximity, in contrast to DeepWalk's depth-first random walk approach",
+      "Applicability to directed, undirected, weighted, and unweighted networks, unlike graph factorization and DeepWalk"
+    ],
+    "experimental_results": [
+      "LINE(2nd) outperforms all other methods on word analogy (66.10% overall vs. SkipGram 63.02%, GF 51.93%, DeepWalk 43.65%)",
+      "LINE(1st+2nd) significantly outperforms all other methods on Wikipedia page classification (Micro-F1 up to 83.74%)",
+      "LINE(1st+2nd) significantly outperforms all other methods on Flickr multi-label classification",
+      "On the sparse Youtube network, LINE(2nd) is inferior to DeepWalk, but LINE(1st+2nd) outperforms DeepWalk with 128 or 256 dimensions",
+      "On DBLP(PaperCitation), LINE(2nd) significantly outperforms DeepWalk",
+      "LINE(1st) and LINE(2nd) process a network with 2 million nodes and a billion edges in less than 3 hours, at least 10% faster than graph factorization and much more efficient than DeepWalk",
+      "LINE(2nd) consistently outperforms LINE(1st) and DeepWalk and converges faster in parameter sensitivity experiments",
+      "Speed up is close to linear with number of threads, and classification performance remains stable with multiple threads"
+    ],
+    "limitations": [
+      "First-order proximity is only applicable for undirected graphs, not directed graphs",
+      "Second-order proximity suffers when the network is extremely sparse and may become inaccurate when the average number of neighbors is too small",
+      "Low degree vertices are hard to embed accurately, especially with second-order proximity based methods",
+      "For new vertices with no observed connections to existing vertices, other information (e.g., textual) must be used, left as future work",
+      "Jointly training the first-order and second-order objectives is left as future work",
+      "Higher-order proximity beyond first-order and second-order is left as future work",
+      "Embedding of heterogeneous information networks is left as future work"
+    ],
+    "summary": "The paper proposes LINE (Large-scale Information Network Embedding), a network embedding model that maps vertices of very large information networks into low-dimensional vector spaces. LINE defines and preserves two complementary notions of proximity: first-order proximity (local pairwise proximity captured by observed edge weights) and second-order proximity (similarity of neighborhood structures, capturing shared neighbors). The model uses carefully designed objective functions for each proximity, optimized via negative sampling and asynchronous stochastic gradient descent. A key contribution is an edge-sampling algorithm using an alias table that samples edges proportional to their weights and treats them as binary edges, addressing the gradient explosion problem caused by high variance in edge weights. The overall time complexity is O(dK|E|), linear in the number of edges. The paper also discusses handling low-degree vertices (via adding second-order neighbors) and new vertices. Experiments on language (Wikipedia), social (Flickr, Youtube), and citation (DBLP) networks evaluate word analogy, document classification, and multi-label node classification. Results show LINE(2nd) outperforms baselines including graph factorization, DeepWalk, and SkipGram on word analogy; LINE(1st+2nd) significantly outperforms all methods on classification tasks; and LINE is efficient, processing networks with millions of nodes and billions of edges in a few hours on a single machine. The paper also analyzes performance with respect to network sparsity, parameter sensitivity, and scalability with multiple threads."
+  }
+}

@@ -1,0 +1,139 @@
+case_id,journal_id,journal_name,relevance,note
+01,4,IEEE Transactions on Computers,3,Strong match with DRAM reliability and computer architecture mechanisms
+01,6,ACM Transactions on Architecture and Code Optimization,3,Strong match with memory architecture and low-overhead mitigation mechanisms
+01,1,ACM Transactions on Computer Systems,2,Matches memory isolation and hardware-software interactions in real systems
+01,50,IEEE Transactions on Dependable and Secure Computing,2,Rowhammer concerns both system dependability and security
+01,2,ACM Transactions on Storage,2,DRAM device reliability and refresh mechanisms are relevant to storage systems
+01,54,Computers & Security,1,The security implications are clear but computer architecture is the dominant focus
+02,1,ACM Transactions on Computer Systems,3,Strong match with production-grade Paxos databases and computer systems practice
+02,5,IEEE Transactions on Parallel and Distributed Systems,3,Strong match with consensus protocols and fault-tolerant distributed systems
+02,19,Distributed Computing,2,Matches the Paxos algorithm and distributed fault-tolerance mechanisms
+02,12,Journal of Parallel and Distributed Computing,2,Matches distributed systems implementation and performance evaluation
+02,50,IEEE Transactions on Dependable and Secure Computing,2,Matches failure recovery and high-availability systems
+02,92,ACM Transactions on Database Systems,2,Relevant to fault-tolerant database implementation but the paper emphasizes systems engineering
+02,82,Software: Practice and Experience,1,Production experience and engineering lessons fit a practice-oriented scope
+03,2,ACM Transactions on Storage,3,Strong match with storage-class memory and in-memory processing
+03,17,ACM Journal on Emerging Technologies in Computing Systems,3,Strong match with emerging memory devices and PIM architectures
+03,4,IEEE Transactions on Computers,3,Strong match with PIM computer architecture and systems evaluation
+03,6,ACM Transactions on Architecture and Code Optimization,2,Matches computer architecture and data-processing offloading
+03,5,IEEE Transactions on Parallel and Distributed Systems,2,Relevant to parallel DPU processing and scalability
+03,27,CCF Transactions on High Performance Computing,1,High-throughput PIM experiments are relevant but storage is the primary topic
+04,31,IEEE Transactions on Networking,3,Strong match with software-defined WANs and traffic engineering
+04,35,Computer Networks,3,Strong match with WAN architecture routing and performance experiments
+04,29,IEEE Journal on Selected Areas in Communications,2,Matches large-scale network traffic engineering and communication networks
+04,40,IEEE Transactions on Network and Service Management,2,Matches centralized control and network operations management
+04,32,ACM Transactions on Internet Technology,2,Relevant to global Internet infrastructure and SDN systems
+04,42,Journal of Network and Computer Applications,1,Relevant to networked application systems but engineering architecture is the stronger focus
+05,34,ACM Transactions on Sensor Networks,3,Strong match with data collection protocols for wireless sensor networks
+05,30,IEEE Transactions on Mobile Computing,3,Strong match with low-power wireless routing and experimental evaluation
+05,48,IEEE Internet of Things Journal,2,Matches sensor and IoT data collection mechanisms
+05,38,Ad Hoc Networks,2,Matches routing protocols for self-organizing wireless networks
+05,47,Wireless Networks,2,Relevant to wireless network protocols and link-quality adaptation
+05,35,Computer Networks,1,Matches the broader network protocol scope but is less specific to sensor networks
+06,31,IEEE Transactions on Networking,3,Strong match with RDMA and SmartNIC remote-memory communication
+06,4,IEEE Transactions on Computers,3,Strong match with remote-memory interfaces and architectural design
+06,1,ACM Transactions on Computer Systems,2,Matches hardware-software co-designed remote-memory systems
+06,5,IEEE Transactions on Parallel and Distributed Systems,2,Matches distributed memory access and performance
+06,35,Computer Networks,2,Relevant to network transport and RDMA mechanisms
+06,12,Journal of Parallel and Distributed Computing,1,Applicable to distributed computing but network architecture is the primary focus
+07,53,ACM Transactions on Privacy and Security,3,Strong match with differential privacy mechanisms and privacy-preserving learning
+07,50,IEEE Transactions on Dependable and Secure Computing,3,Matches privacy-preserving machine learning and security guarantees
+07,51,IEEE Transactions on Information Forensics and Security,2,Relevant to privacy analysis and secure learning methods
+07,183,Journal of Machine Learning Research,2,Matches deep-learning optimization and privacy-accounting methods
+07,199,Machine Learning,2,Matches learning algorithms and theory under privacy constraints
+07,180,Artificial Intelligence,1,The machine-learning contribution is relevant but the privacy topic is more specialized
+08,69,IEEE Transactions on Software Engineering,3,Strong match with real-fault databases and software-testing research infrastructure
+08,68,ACM Transactions on Software Engineering and Methodology,3,Strong match with software-testing methods and reproducible empirical research
+08,81,"Software Testing, Verification and Reliability",3,Direct match with fault databases and controlled testing studies
+08,72,Empirical Software Engineering,2,Matches empirical study design using real Java faults
+08,71,Automated Software Engineering,2,Relevant to automated testing and fault-localization applications
+08,77,Journal of Systems and Software,1,Relevant to software quality and testing but less specifically targeted
+09,72,Empirical Software Engineering,3,Strong match with GitHub mining biases and empirical methods
+09,69,IEEE Transactions on Software Engineering,3,Strong match with mining software repositories and research methodology
+09,68,ACM Transactions on Software Engineering and Methodology,2,Matches software-engineering data collection and validity concerns
+09,76,Journal of Software: Evolution and Process,2,Relevant to software evolution and repository-history analysis
+09,74,Information and Software Technology,2,Matches empirical software-engineering research and practical guidance
+09,82,Software: Practice and Experience,1,GitHub practice is relevant but methodology is the primary topic
+10,94,IEEE Transactions on Knowledge and Data Engineering,3,Strong match with large-scale graph representation learning and network data mining
+10,100,Data Mining and Knowledge Discovery,3,Strong match with node representations and graph-mining methods
+10,96,ACM Transactions on Knowledge Discovery from Data,3,Strong match with scalable network feature learning
+10,199,Machine Learning,2,Matches representation learning and random-walk optimization
+10,183,Journal of Machine Learning Research,2,Relevant to general graph machine-learning methods
+10,124,ACM Transactions on Intelligent Systems and Technology,2,Matches graph representations and downstream intelligent tasks
+10,104,Information Sciences,1,Relevant to information-network analysis but less specialized
+11,129,ACM Transactions on Algorithms,3,Strong match with dynamic graph algorithms and amortized complexity
+11,128,SIAM Journal on Computing,3,Strong match with rigorous graph-algorithm theory and complexity analysis
+11,132,Algorithmica,3,Strong match with graph algorithms and data structures
+11,137,Journal of Computer and System Sciences,2,Matches theoretical computer science and dynamic graph algorithms
+11,151,Theory of Computing Systems,2,Matches graph algorithms and computational theory
+11,141,Theoretical Computer Science,2,Relevant to dynamic graphs and graph-separator theory
+11,112,Information Processing Letters,1,The theoretical result is relevant but its appropriate length and depth require human review
+12,153,ACM Transactions on Graphics,3,Strong match with novel-view synthesis and real-time rendering
+12,158,Computer Graphics Forum,3,Strong match with 3D representations and real-time graphics rendering
+12,155,IEEE Transactions on Visualization and Computer Graphics,3,Matches 3D scene representations and visualization rendering
+12,182,International Journal of Computer Vision,2,Relevant to multi-view reconstruction and novel-view synthesis
+12,181,IEEE Transactions on Pattern Analysis and Machine Intelligence,2,Relevant to learning-based 3D vision methods
+12,167,Computers & Graphics,2,Matches real-time rendering implementations and graphics applications
+12,176,The Visual Computer,1,Matches 3D vision and graphics but has a broader scope
+13,190,"IEEE Transactions on Audio, Speech and Language Processing",3,Strong match with end-to-end speech-recognition architectures
+13,209,Computer Speech & Language,3,Strong match with speech-recognition and language-processing technology
+13,163,Speech Communication,3,Strong match with acoustic modeling and automatic speech recognition
+13,203,Transactions of the Association for Computational Linguistics,2,Relevant to sequence modeling and Transformer methods
+13,186,Computational Linguistics,2,The language-modeling contribution is relevant but speech is the primary focus
+13,201,Neural Networks,2,Matches convolution-augmented Transformer neural architectures
+13,198,"Journal of Speech, Language, and Hearing Research",1,Relevant to speech research but engineering recognition systems are not its sole focus
+14,4,IEEE Transactions on Computers,3,Same paper as case 01 with a strong match to DRAM reliability
+14,6,ACM Transactions on Architecture and Code Optimization,3,Same paper as case 01 with a strong match to memory architecture
+14,1,ACM Transactions on Computer Systems,2,Same paper as case 01 and matches systems interactions
+14,50,IEEE Transactions on Dependable and Secure Computing,2,Same paper as case 01 and matches dependable and secure computing
+14,2,ACM Transactions on Storage,2,Same paper as case 01 and is relevant to storage reliability
+14,54,Computers & Security,1,Same paper as case 01 and is relevant to security implications
+15,203,Transactions of the Association for Computational Linguistics,3,Strong match with word embeddings and computational linguistics methods
+15,186,Computational Linguistics,3,Strong match with word representations and semantic regularities
+15,183,Journal of Machine Learning Research,3,Matches general representation-learning and optimization methods
+15,199,Machine Learning,2,Matches unsupervised word-representation learning algorithms
+15,231,Natural Language Engineering,2,Relevant to applying word embeddings in NLP systems
+15,124,ACM Transactions on Intelligent Systems and Technology,2,Matches representation learning and intelligent applications
+15,104,Information Sciences,1,Relevant to vector-representation methods but has a broader scope
+16,183,Journal of Machine Learning Research,3,Strong match with deep kernel learning and scalable Gaussian processes
+16,199,Machine Learning,3,Strong match with joint learning of kernel methods and deep representations
+16,194,IEEE Transactions on Neural Networks and learning systems,3,Matches deep neural features and probabilistic kernel learning
+16,200,Neural Computation,2,Relevant to neural networks and kernel-learning theory
+16,180,Artificial Intelligence,2,Relevant to general machine-learning model innovation
+16,234,Neurocomputing,2,Matches the combination of deep learning and Gaussian processes
+16,202,Pattern Recognition,1,Relevant to representation learning for classification but kernel methods are more general
+17,242,ACM Transactions on Computer-Human Interaction,3,Strong match with design guidelines for human-AI interaction
+17,239,ACM Transactions on Interactive Intelligent Systems,3,Strong match with the design and evaluation of interactive AI systems
+17,243,International Journal of Human-Computer Studies,3,Strong match with HCI design principles and user research
+17,245,Human-Computer Interaction,2,Matches human-AI interaction theory and design practice
+17,255,Proceedings of the ACM on Human-Computer Interaction,2,Matches empirical HCI research and design knowledge
+17,249,User Modeling and User-Adapted Interaction,2,Relevant to intelligent-system adaptation and user needs
+17,252,Behaviour & Information Technology,1,Relevant to relationships between people and AI systems but has a broader scope
+18,242,ACM Transactions on Computer-Human Interaction,3,Same paper as case 17 with a strong match to human-AI interaction
+18,239,ACM Transactions on Interactive Intelligent Systems,3,Same paper as case 17 with a strong match to interactive intelligent systems
+18,243,International Journal of Human-Computer Studies,3,Same paper as case 17 with a strong match to HCI design principles
+18,245,Human-Computer Interaction,2,Same paper as case 17 and matches interaction theory and practice
+18,255,Proceedings of the ACM on Human-Computer Interaction,2,Same paper as case 17 and matches empirical HCI research
+18,249,User Modeling and User-Adapted Interaction,2,Same paper as case 17 and is relevant to adaptive interaction
+18,252,Behaviour & Information Technology,1,Same paper as case 17 and is relevant to human-technology behavior
+19,242,ACM Transactions on Computer-Human Interaction,3,Strong match with accessible touchscreen interaction and user research
+19,243,International Journal of Human-Computer Studies,3,Strong match with interaction design and controlled studies involving blind users
+19,255,Proceedings of the ACM on Human-Computer Interaction,3,Strong match with empirical accessibility research in HCI
+19,247,Interacting with Computers,2,Matches touchscreen interaction techniques and usability evaluation
+19,248,International Journal of Human-Computer Interaction,2,Matches mobile accessibility interaction and user experience
+19,253,Personal and Ubiquitous Computing,2,Relevant to mobile touchscreens and nonvisual ubiquitous interaction
+19,252,Behaviour & Information Technology,1,Relevant to accessible user behavior and its relationship with technology
+20,84,IEEE Transactions on Knowledge and Data Engineering,3,Strong match with large-scale information-network embedding
+20,86,ACM Transactions on Knowledge Discovery from Data,3,Strong match with network representation learning and scalable graph mining
+20,100,Data Mining and Knowledge Discovery,3,Strong match with graph-structured feature learning
+20,199,Machine Learning,2,Matches unsupervised representation-learning objectives and optimization
+20,183,Journal of Machine Learning Research,2,Relevant to general network-embedding methods
+20,83,ACM Transactions on Information Systems,2,Relevant to information-network representations and downstream information tasks
+20,104,Information Sciences,1,Matches network analysis and dimensionality reduction but has a broader scope
+21,125,ACM Transactions on Recommender Systems,3,Strong match with social-relationship inference and recommendation applications
+21,93,ACM Transactions on Information Systems,3,Strong match with user modeling and social information retrieval
+21,94,IEEE Transactions on Knowledge and Data Engineering,3,Strong match with trajectory mining and multilabel prediction
+21,102,GeoInformatica,2,Matches location-trajectory mining and spatial information analysis
+21,97,ACM Transactions on the Web,2,Relevant to location-based social networks and web social computing
+21,104,Information Sciences,2,Matches deep multilabel learning and trajectory analysis
+21,254,Pervasive and Mobile Computing,1,Relevant to mobile trajectories and location-aware applications

@@ -1,0 +1,64 @@
+{
+  "case_id": "13",
+  "source_pdf": "13.pdf",
+  "paper_profile": {
+    "title": "Conformer: Convolution-augmented Transformer for Speech Recognition",
+    "abstract": "Recently Transformer and Convolution neural network (CNN) based models have shown promising results in Automatic Speech Recognition (ASR), outperforming Recurrent neural networks (RNNs). Transformer models are good at capturing content-based global interactions, while CNNs exploit local features effectively. In this work, we achieve the best of both worlds by studying how to combine convolution neural networks and transformers to model both local and global dependencies of an audio sequence in a parameter-efficient way. To this regard, we propose the convolution-augmented transformer for speech recognition, named Conformer. Conformer significantly outperforms the previous Transformer and CNN based models achieving state-of-the-art accuracies. On the widely used LibriSpeech benchmark, our model achieves WER of 2.1%/4.3% without using a language model and 1.9%/3.9% with an external language model on test/testother. We also observe competitive performance of 2.7%/6.3% with a small model of only 10M parameters.",
+    "keywords": [
+      "speech recognition",
+      "attention",
+      "convolutional neural networks",
+      "transformer",
+      "end-to-end"
+    ],
+    "research_fields": [
+      "Automatic Speech Recognition",
+      "Machine Learning",
+      "Natural Language Processing"
+    ],
+    "research_problem": "How to combine convolution neural networks and transformers to model both local and global dependencies of an audio sequence in a parameter-efficient way for automatic speech recognition.",
+    "methods": [
+      "Conformer block (feed-forward, multi-headed self-attention, convolution, and second feed-forward modules in a Macaron-style sandwich structure)",
+      "Multi-headed self-attention with relative sinusoidal positional encoding (Transformer-XL)",
+      "Convolution module with pointwise convolution, gated linear unit (GLU), 1-D depthwise convolution, batchnorm, and swish activation",
+      "Macaron-style half-step feed-forward modules",
+      "Convolution subsampling module",
+      "SpecAugment data augmentation",
+      "Variational noise regularization",
+      "Adam optimizer with transformer learning rate schedule",
+      "3-layer LSTM language model with shallow fusion"
+    ],
+    "datasets": [
+      "LibriSpeech"
+    ],
+    "main_contributions": [
+      "Proposes the Conformer architecture, a convolution-augmented transformer that integrates CNN and Transformer components for end-to-end speech recognition",
+      "Achieves state-of-the-art results on LibriSpeech, outperforming previous Transformer and CNN based models",
+      "Demonstrates better accuracy with fewer parameters than previous work, achieving 1.9%/3.9% WER on test/testother",
+      "Presents three models (Conformer S, M, L) with 10M, 30M, and 118M parameters",
+      "Provides ablation studies on attention heads, convolution kernel sizes, activation functions, feed-forward placement, and convolution module strategies"
+    ],
+    "claimed_innovations": [
+      "Novel combination of self-attention and convolution sandwiched between a pair of feed-forward modules (Macaron-style)",
+      "Convolution module stacked after the self-attention module, which works best for speech recognition",
+      "Relative positional encoding integrated into multi-headed self-attention for better generalization on different input lengths",
+      "Parameter-efficient modeling of both local and global dependencies in a single architecture"
+    ],
+    "experimental_results": [
+      "Conformer(L) achieves WER of 2.1%/4.3% without language model and 1.9%/3.9% with external language model on test/testother",
+      "Conformer(S) with 10.3M parameters achieves 2.7%/6.3% on test/testother, 0.7% better on testother than ContextNet(S)",
+      "Conformer(M) with 30.7M parameters outperforms Transformer Transducer with 139M parameters",
+      "Conformer(M) outperforms Transformer Transducer by 15% relative improvement on testother with external language model",
+      "Ablation: removing convolution block degrades performance (2.1/4.9 on test/testother vs 2.1/4.3 for Conformer)",
+      "Ablation: removing relative positional embedding degrades performance most (2.4/5.6 on test/testother)",
+      "Ablation: Macaron-style FFN pair more effective than single FFN of same parameters",
+      "Ablation: increasing attention heads up to 16 improves accuracy, especially on dev-other",
+      "Ablation: kernel size 32 performs best among {3, 7, 17, 32, 65}; kernel size 65 worsens performance",
+      "Ablation: convolution module after self-attention works best; parallel MHSA and convolution worsens performance"
+    ],
+    "limitations": [
+      "Convolution module is limited in capturing dynamic global context as it only applies global averaging over the entire sequence (noted for ContextNet, motivating this work)"
+    ],
+    "summary": "The paper introduces Conformer, a convolution-augmented Transformer architecture for end-to-end automatic speech recognition. The Conformer block consists of four stacked modules: a feed-forward module, a multi-headed self-attention module, a convolution module, and a second feed-forward module, arranged in a Macaron-style sandwich structure with half-step residual connections. The self-attention module uses relative sinusoidal positional encoding from Transformer-XL, while the convolution module uses a pointwise convolution with GLU gating, a 1-D depthwise convolution, batchnorm, and swish activation. The authors evaluate three model sizes (Conformer S/M/L with 10M, 30M, and 118M parameters) on the LibriSpeech benchmark. The large model achieves state-of-the-art WER of 2.1%/4.3% without a language model and 1.9%/3.9% with an external language model on test/testother. The medium model outperforms the previously published Transformer Transducer which uses 139M parameters. Extensive ablation studies examine the effects of the convolution block, Macaron-style feed-forward modules, relative positional embeddings, swish activation, attention head count, convolution kernel sizes, and different strategies for combining convolution and self-attention modules. The authors conclude that the convolution module is the most critical component, and that placing it after the self-attention module works best for speech recognition."
+  }
+}

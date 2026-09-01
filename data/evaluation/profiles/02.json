@@ -1,0 +1,71 @@
+{
+  "case_id": "02",
+  "source_pdf": "02.pdf",
+  "paper_profile": {
+    "title": "Paxos Made Live - An Engineering Perspective",
+    "abstract": "We describe our experience in building a fault-tolerant database using the Paxos consensus algorithm. Despite the existing literature in the field, building such a database proved to be non-trivial. We describe selected algorithmic and engineering problems encountered, and the solutions we found for them. Our measurements indicate that we have built a competitive system.",
+    "keywords": [
+      "Experiences",
+      "Fault-tolerance",
+      "Implementation",
+      "Paxos"
+    ],
+    "research_fields": [
+      "Distributed Systems",
+      "Fault-Tolerance"
+    ],
+    "research_problem": "The paper addresses the practical challenges of moving the Paxos consensus algorithm from theory to a production-ready fault-tolerant database, including algorithmic gaps in the literature, software engineering challenges, and unexpected real-world failures.",
+    "methods": [
+      "Paxos consensus algorithm",
+      "Multi-Paxos",
+      "Master leases",
+      "Epoch numbers",
+      "Group membership",
+      "Snapshots with snapshot handles",
+      "MultiOp database primitive",
+      "State machine specification language with compiler to C++",
+      "Runtime consistency checking with checksums",
+      "Randomized failure-injection testing (safety and liveness modes)",
+      "Catch-up mechanism for lagging replicas",
+      "Batching of submitted values"
+    ],
+    "datasets": [],
+    "main_contributions": [
+      "Description of building a production fault-tolerant database based on Paxos to replace the commercial 3DB database in Chubby",
+      "Identification of algorithmic gaps between Paxos literature and real-world system needs, with solutions including disk corruption handling, master leases, epoch numbers, group membership, and snapshots",
+      "Introduction of the MultiOp primitive providing transaction-style support without true database transactions",
+      "Software engineering methods including a state machine specification language, runtime consistency checking, and repeatable randomized failure-injection testing",
+      "Documentation of unexpected production failures and lessons learned over 100+ machine years of execution",
+      "Performance measurements showing the Paxos-based system outperforms 3DB"
+    ],
+    "claimed_innovations": [
+      "MultiOp primitive for atomic multi-operation database transactions",
+      "Snapshot handle concept to coordinate application snapshots with the Paxos log",
+      "State machine specification language with compiler that generates C++ and logging/coverage code",
+      "Mechanism to handle disk corruption by having a replica rebuild as a non-voting member until it observes a complete Paxos instance",
+      "Master lease mechanism to serve reads locally without running Paxos",
+      "Epoch number mechanism to detect master turnover and abort operations"
+    ],
+    "experimental_results": [
+      "Paxos-Chubby achieved 91 ops/sec vs 75 ops/sec for 3DB (1.2x) with 1 worker",
+      "Paxos-Chubby achieved 490 ops/sec vs 134 ops/sec for 3DB (3.7x) with 10 workers",
+      "Paxos-Chubby achieved 640 ops/sec vs 178 ops/sec for 3DB (3.6x) with 20 workers",
+      "MB/s throughput with 1 worker and 8KB files: 345 KB/s vs 172 KB/s (2x)",
+      "MB/s throughput with 4 workers and 8KB files: 777-949 KB/s vs 217 KB/s (3.6-4.4x)",
+      "MB/s throughput with 1 worker and 32KB files: 672-822 KB/s vs 338 KB/s (2.0-2.4x)",
+      "System logged well over 100 machine years of execution in production",
+      "Masters successfully maintain leases for several days at a time",
+      "Under one percent of Paxos instances run the full Paxos algorithm in a loaded system",
+      "Chubby verification test found five subtle bugs related to master failover in its first two weeks"
+    ],
+    "limitations": [
+      "The system is not optimized for performance and there is room to make it faster",
+      "The fault-tolerant log test could not be run against the complete Chubby system because Chubby is multi-threaded at its core, sacrificing repeatability",
+      "The database and local log handling code had to be made multi-threaded, sacrificing repeatability",
+      "Fault-tolerant systems can mask bugs or configuration problems while lowering their own fault-tolerance, with no systematic solution found",
+      "The checksum mechanism does not detect files that roll back to an old state",
+      "The authors consider the current failure rate too high for Chubby and determined it needs to be reduced further"
+    ],
+    "summary": "This paper describes the engineering experience of building a production fault-tolerant database at Google based on the Paxos consensus algorithm, used to replace the commercial third-party database (3DB) underlying the Chubby lock service. The authors detail the architecture, where a fault-tolerant replicated log based on Paxos sits at the bottom of the protocol stack, with a fault-tolerant replicated database on top, and Chubby using that database. They describe algorithmic challenges and solutions: handling disk corruption (via checksums, GFS markers, and non-voting rebuild), master leases to serve reads locally, epoch numbers to detect master turnover, group membership changes, snapshots with snapshot handles, and the MultiOp primitive providing atomic transaction-style support. They also discuss software engineering methods including a state machine specification language compiled to C++, runtime consistency checking via periodic checksums, and repeatable randomized failure-injection testing in safety and liveness modes. The paper documents unexpected production failures over 100+ machine years, including thread starvation causing master failover cascades, upgrade script failures causing data loss, semantic mismatches between database and Chubby, memory corruption, and OS bugs. Performance measurements show the Paxos-based system outperforms 3DB by 1.2x to 4.4x across various workloads. The authors conclude that significant gaps remain between Paxos theory and practice, and argue the fault-tolerance community should develop better tools and testing approaches, drawing a comparison to the compiler construction field."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "04",
+  "source_pdf": "04.pdf",
+  "paper_profile": {
+    "title": "B4: Experience with a Globally-Deployed Software Defined WAN",
+    "abstract": "We present the design, implementation, and evaluation of B4, a private WAN connecting Google's data centers across the planet. B4 has a number of unique characteristics: i) massive bandwidth requirements deployed to a modest number of sites, ii) elastic traffic demand that seeks to maximize average bandwidth, and iii) full control over the edge servers and network, which enables rate limiting and demand measurement at the edge. These characteristics led to a Software Defined Networking architecture using OpenFlow to control relatively simple switches built from merchant silicon. B4's centralized traffic engineering service drives links to near 100% utilization, while splitting application flows among multiple paths to balance capacity against application priority/demands. We describe experience with three years of B4 production deployment, lessons learned, and areas for future work.",
+    "keywords": [
+      "Centralized Traffic Engineering",
+      "Wide-Area Networks",
+      "Software-Defined Networking",
+      "Routing",
+      "OpenFlow"
+    ],
+    "research_fields": [
+      "Computer Networks",
+      "Software Engineering"
+    ],
+    "research_problem": "How to build a cost-effective, scalable private wide-area network connecting Google's data centers using Software Defined Networking principles, achieving high link utilization and efficient traffic engineering that traditional WAN architectures cannot provide.",
+    "methods": [
+      "Software Defined Networking (SDN)",
+      "OpenFlow",
+      "Centralized Traffic Engineering (TE)",
+      "Max-min fair allocation",
+      "Tunnel Group Generation algorithm",
+      "Tunnel Group Quantization",
+      "ECMP hashing",
+      "Paxos leader election",
+      "Onix (modified) for OpenFlow Control",
+      "Quagga BGP/ISIS routing stack",
+      "Routing Application Proxy (RAP)",
+      "IP-in-IP encapsulation",
+      "Linear Programming (LP) comparison baseline"
+    ],
+    "datasets": [
+      "Production flow data for a day (used for TE algorithm evaluation)"
+    ],
+    "main_contributions": [
+      "Design and implementation of B4, a globally-deployed Software Defined WAN connecting Google's data centers",
+      "A centralized traffic engineering service that drives links to near 100% utilization while splitting application flows among multiple paths based on priority/demands",
+      "Integration of existing routing protocols (BGP/ISIS) with OpenFlow-based switch control to support hybrid network deployments",
+      "Three years of production deployment experience, lessons learned, and areas for future work",
+      "A TE optimization algorithm achieving similar fairness and at least 99% of bandwidth utilization with 25x faster performance relative to LP"
+    ],
+    "claimed_innovations": [
+      "SDN architecture using OpenFlow to control simple switches built from merchant silicon",
+      "Centralized TE layered on top of baseline routing protocols using prioritized switch forwarding table entries, providing a 'big red button' fallback to shortest path forwarding",
+      "Custom-built high-radix switches from merchant silicon in a two-stage Clos topology",
+      "TE optimization algorithm with Tunnel Group Generation and Tunnel Group Quantization achieving 99% of LP bandwidth utilization at 25x faster runtime",
+      "Topology abstraction of each site into a single node for TE scalability",
+      "Bandwidth functions capturing relative application priority for max-min fair allocation"
+    ],
+    "experimental_results": [
+      "B4 has been in production for three years, carries more traffic than Google's public facing WAN, and has a higher growth rate",
+      "Network traffic roughly doubled in year 2012",
+      "5 geographically distributed TE servers participate in master election; secondary servers can assume mastership in less than 10 seconds; master retains status for 11 days on average",
+      "Averaged 286 topology changes per day (Sept-Nov 2012), with only 7 edge additions/removals per day",
+      "TE algorithm runs 540 times daily with average runtime 0.3s and max runtime 0.8s",
+      "99th percentile NoOp TE-Op latency is one second (max RTT 150ms)",
+      "Single link failure leads to only a few milliseconds of traffic loss; encap switch failure a few milliseconds longer; transit router failure requires 3.3 seconds convergence",
+      "OFC and TE server failures are hitless by design",
+      "TE achieves 14% average throughput increase over shortest-path routing; improvement flattens at around 4 paths and at 1/16 path-split quantum",
+      "Busiest B4 edges constantly run at near 100% utilization; almost all links sustain full utilization during each day",
+      "For at least 75% of site-to-site edges, max:min ratio in link utilization is 1.05 without failures and 2.0 with failures",
+      "Moving a high-priority data copy off the shortest path reduces required deployed capacity by a factor of 2"
+    ],
+    "limitations": [
+      "The approach does not generalize to all WANs or SDNs",
+      "The path for transmitting/receiving routing protocol packets between switch and routing application is complex and somewhat brittle",
+      "OFC to OFA connection is the most constrained in the implementation, leading to substantial protocol packet queueing (grew to more than 400MB at peak during outage)",
+      "A latent OFC bug prevented recovery during periods of high background load",
+      "Switch time fraction is substantial even for control across the WAN, symptomatic of OpenFlow-style control still being in its early stages",
+      "It is impossible to distinguish between physical failures of underlying switch hardware and the associated control plane (fail open design)",
+      "More effective load balancing during failure conditions is a subject of ongoing work"
+    ],
+    "summary": "This paper presents the design, implementation, and evaluation of B4, Google's private Software Defined WAN connecting its data centers worldwide. B4 was motivated by unique characteristics: massive bandwidth requirements across a modest number of sites, elastic traffic demand seeking to maximize average bandwidth, and full control over edge servers and network enabling rate limiting and demand measurement at the edge. These led to an SDN architecture using OpenFlow to control relatively simple switches built from merchant silicon. The architecture has three layers: switch hardware, site controllers (Network Control Servers hosting OpenFlow controllers and Network Control Applications), and a global layer with logically centralized applications (SDN Gateway and central TE server). B4 integrates existing routing protocols (BGP/ISIS via Quagga) with OpenFlow-based switch control through a Routing Application Proxy, enabling hybrid deployments and a gradual rollout. The centralized traffic engineering service allocates bandwidth among competing applications using max-min fair allocation, with bandwidth functions capturing relative application priority. The TE optimization algorithm (Tunnel Group Generation and Tunnel Group Quantization) achieves similar fairness and at least 99% of LP bandwidth utilization with 25x faster performance. TE drives links to near 100% utilization while splitting flows among multiple paths. B4 has been in production for three years, carries more traffic than Google's public facing WAN, and achieves 2-3x efficiency improvements over standard practice. The paper reports on deployment evolution, TE operations performance, failure impact, link utilization and hashing effectiveness, and lessons from a substantial outage. Key findings include near-100% link utilization, 14% average throughput improvement over shortest-path routing, hitless OFC/TE server failovers, and challenges in the OFC-OFA packet IO path and hardware programming overheads. The paper concludes that while the architecture does not generalize to all SDNs or WANs, the hybrid approach of supporting existing routing protocols alongside novel TE services demonstrates an effective technique for gradually introducing SDN into existing deployments."
+  }
+}

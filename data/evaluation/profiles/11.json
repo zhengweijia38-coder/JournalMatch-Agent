@@ -1,0 +1,63 @@
+{
+  "case_id": "11",
+  "source_pdf": "11.pdf",
+  "paper_profile": {
+    "title": "Good r-Divisions Imply Optimal Amortized Decremental Biconnectivity",
+    "abstract": "We present a data structure that, given a graph G of n vertices and m edges, and a suitable pair of nested r-divisions of G, preprocesses G in O(m + n) time and handles any series of edge-deletions in O(m) total time while answering queries to pairwise biconnectivity in worst-case O(1) time. In case the vertices are not biconnected, the data structure can return a cutvertex separating them in worst-case O(1) time. As an immediate consequence, this gives optimal amortized decremental biconnectivity, 2-edge connectivity, and connectivity for large classes of graphs, including planar graphs and other minor free graphs.",
+    "keywords": [
+      "Dynamic graphs",
+      "2-connectivity",
+      "graph minors",
+      "r-divisions",
+      "graph separators"
+    ],
+    "research_fields": [
+      "Dynamic graph algorithms",
+      "Graph Theory"
+    ],
+    "research_problem": "Whether decremental (deletion-only) connectivity, 2-edge connectivity, biconnectivity, or minimum cut for general graphs can be solved in amortized constant time per edge-deletion, or whether non-trivial lower bounds exist. The paper addresses maintaining biconnectivity, 2-edge connectivity, and connectivity under edge and vertex deletions for large classes of graphs including planar and minor-free graphs.",
+    "methods": [
+      "r-divisions (strict (r,s)-divisions)",
+      "nested r-divisions / suitable pair of r-divisions",
+      "BC-trees (block-cutpoint trees)",
+      "compressed BC-forest",
+      "patchwork graph",
+      "bicapacitated biconnectivity",
+      "fully dynamic biconnectivity data structure",
+      "characteristic ancestor queries",
+      "first-on-path queries",
+      "union-find (weighted quick-find)",
+      "look-up tables for polyloglog-size regions",
+      "recursive separator / sparsification techniques"
+    ],
+    "datasets": [],
+    "main_contributions": [
+      "A data structure that, given a graph G and a suitable pair of nested r-divisions, preprocesses G in O(m+n) time and handles any series of edge-deletions in O(m) total time while answering pairwise biconnectivity queries in worst-case O(1) time.",
+      "The data structure can return a cutvertex separating non-biconnected vertices, specifically the nearest cutvertex, in worst-case O(1) time.",
+      "Optimal amortized decremental biconnectivity, 2-edge connectivity, and connectivity for large classes of graphs including planar, bounded genus, and minor-free graphs.",
+      "A linear-time algorithm for computing r-divisions in minor-free graphs (Lemma 2).",
+      "A general framework expected to be useful for deriving optimal decremental algorithms from other dynamic algorithms with polylog update time."
+    ],
+    "claimed_innovations": [
+      "Generalization of the planar decremental connectivity result of Lacki and Sankowski to r-divisible graphs and to 2-edge connectivity and biconnectivity.",
+      "Introduction of the compressed BC-forest and patchwork graph to represent biconnectivity of regions from the perspective of boundary vertices.",
+      "Introduction of bicapacitated biconnectivity as a tool to make the recursion work.",
+      "A three-level structure (top, middle, bottom) achieving O(1) update and query time in the practical RAM model using look-up tables.",
+      "Solving the nearest cutvertex problem via characteristic ancestor queries on dynamic trees subject to splits, contractions, and deletions."
+    ],
+    "experimental_results": [
+      "Improves amortized time per operation for planar graphs: connectivity from O(1) to O(1), 2-edge-connectivity from O(1) to O(1), biconnectivity from O(log n) to O(1).",
+      "For bounded genus graphs: connectivity from O(log n) to O(1), 2-edge-connectivity from O(1) to O(1), biconnectivity from O(1) to O(1).",
+      "For minor-free graphs: connectivity from O(log^2 n / log log n) to O(1), 2-edge-connectivity from O(1) to O(1), biconnectivity from O(1) to O(1).",
+      "The data structure handles any sequence of O(|R'|) path deletions, block splits, and pseudoblock contractions in O(|R'| t(n') log n') total time (Lemma 15).",
+      "Any sequence of O(|R'|) updates to R' cause O(|∂R|) updates in BC(R', ∂R) (Lemma 16).",
+      "Any sequence of O(|G|) updates in G cause O(|GR|) updates in GR (Lemma 17)."
+    ],
+    "limitations": [
+      "The question of whether the data structure generally admits vertex deletions in O(n) total time remains open.",
+      "The linear-time algorithm for finding r-divisions in minor-free graphs (Lemma 2) was claimed without a found reference in the literature; the authors note they would not be surprised if it is common knowledge.",
+      "The previous solution of Henzinger et al. for r-divisions only works for planar graphs and h-minor-free graphs of bounded degree."
+    ],
+    "summary": "The paper presents a data structure for decremental (deletion-only) biconnectivity. Given a graph G with n vertices and m edges and a suitable pair of nested r-divisions, the structure preprocesses G in O(m+n) time and handles any series of edge-deletions in O(m) total time while answering pairwise biconnectivity queries in worst-case O(1) time. For non-biconnected vertex pairs, it can return the nearest cutvertex separating them in O(1) time. The approach generalizes and improves upon the planar decremental connectivity result of Lacki and Sankowski, extending from planar graphs to r-divisible graphs and from plain connectivity to 2-edge connectivity and biconnectivity. The key technical tools are the compressed BC-forest (obtained from block-cutpoint trees by contracting paths between critical nodes), the patchwork graph (stitching compressed BC-forests of regions together via shared boundary vertices), and bicapacitated biconnectivity (viewing the BC-forest as a bicapacitated graph where non-bridge blocks have capacity 2). The structure uses nested r-divisions with three levels (top, middle, bottom), where bottom-level regions of polyloglog size are handled via look-up tables to achieve O(1) update and query time in the practical RAM model. Decremental changes are modeled by three operations: path deletions, block splits, and pseudoblock contractions, which are handled by a fully dynamic biconnectivity data structure. Nearest cutvertex queries are answered via characteristic ancestor queries on dynamic trees. As a consequence, the paper obtains optimal amortized decremental biconnectivity, 2-edge connectivity, and connectivity for planar, bounded genus, and minor-free graphs, with a linear-time algorithm for computing r-divisions in minor-free graphs. The question of whether the data structure generally admits vertex deletions in O(n) total time remains open."
+  }
+}

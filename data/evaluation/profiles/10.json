@@ -1,0 +1,71 @@
+{
+  "case_id": "10",
+  "source_pdf": "10.pdf",
+  "paper_profile": {
+    "title": "node2vec: Scalable Feature Learning for Networks",
+    "abstract": "Prediction tasks over nodes and edges in networks require careful effort in engineering features used by learning algorithms. Recent research in the broader field of representation learning has led to significant progress in automating prediction by learning the features themselves. However, present feature learning approaches are not expressive enough to capture the diversity of connectivity patterns observed in networks. Here we propose node2vec, an algorithmic framework for learning continuous feature representations for nodes in networks. In node2vec, we learn a mapping of nodes to a low-dimensional space of features that maximizes the likelihood of preserving network neighborhoods of nodes. We define a flexible notion of a node's network neighborhood and design a biased random walk procedure, which efficiently explores diverse neighborhoods. Our algorithm generalizes prior work which is based on rigid notions of network neighborhoods, and we argue that the added flexibility in exploring neighborhoods is the key to learning richer representations. We demonstrate the efficacy of node2vec over existing state-of-the-art techniques on multi-label classification and link prediction in several real-world networks from diverse domains. Taken together, our work represents a new way for efficiently learning state-of-the-art task-independent representations in complex networks.",
+    "keywords": [
+      "Information networks",
+      "Feature learning",
+      "Node embeddings",
+      "Graph representations"
+    ],
+    "research_fields": [
+      "Machine Learning",
+      "Recommender Systems",
+      "Natural Language Processing"
+    ],
+    "research_problem": "Learning continuous feature representations for nodes in networks that capture the diversity of connectivity patterns, balancing homophily and structural equivalence, in a scalable and task-independent manner.",
+    "methods": [
+      "node2vec algorithm",
+      "2nd order biased random walks",
+      "Skip-gram architecture extended to networks",
+      "Stochastic gradient descent (SGD)",
+      "Negative sampling",
+      "Alias sampling",
+      "Binary operators for edge features (Average, Hadamard, Weighted-L1, Weighted-L2)",
+      "One-vs-rest logistic regression classifier with L2 regularization",
+      "k-means clustering"
+    ],
+    "datasets": [
+      "Les Misérables network",
+      "BlogCatalog",
+      "Protein-Protein Interactions (PPI) for Homo Sapiens",
+      "Wikipedia word cooccurrence network",
+      "Facebook",
+      "arXiv ASTRO-PH",
+      "Erdos-Renyi graphs"
+    ],
+    "main_contributions": [
+      "Proposes node2vec, an efficient scalable algorithm for feature learning in networks that optimizes a network-aware, neighborhood preserving objective using SGD",
+      "Shows how node2vec is in accordance with established principles in network science, providing flexibility in discovering representations conforming to different equivalences (homophily and structural equivalence)",
+      "Extends node2vec and other neighborhood-preserving feature learning methods from nodes to pairs of nodes for edge-based prediction tasks",
+      "Empirically evaluates node2vec for multi-label classification and link prediction on several real-world datasets"
+    ],
+    "claimed_innovations": [
+      "Flexible notion of a node's network neighborhood via a family of biased random walks with tunable parameters p and q",
+      "2nd order random walk with return parameter p and in-out parameter q that interpolates between BFS and DFS exploration",
+      "Semi-supervised learning of search parameters using a tiny fraction of labeled data",
+      "Compositionality of node features to edge features using simple binary operators"
+    ],
+    "experimental_results": [
+      "node2vec outperforms state-of-the-art methods by up to 26.7% on multi-label classification and up to 12.6% on link prediction",
+      "On BlogCatalog, node2vec achieves 22.3% gain over DeepWalk and 229.2% gain over LINE in Macro-F1 scores",
+      "On PPI, node2vec achieves 23.8% gain over LINE in Macro-F1 scores",
+      "On Wikipedia, node2vec achieves 21.8% gain over DeepWalk and 33.2% over LINE",
+      "node2vec achieves biggest improvement over DeepWalk of 26.7% on BlogCatalog at 70% labeled data",
+      "node2vec achieves improvements up to 41.1% over LINE on PPI while training on just 10% labeled data",
+      "node2vec achieves best AUC improvement of 12.6% on the arXiv dataset over the best performing baseline (Adamic-Adar)",
+      "node2vec outperforms DeepWalk and LINE in link prediction with gain up to 3.8% and 6.5% respectively in AUC scores",
+      "Hadamard operator when used with node2vec is highly stable and gives the best performance on average across all networks",
+      "node2vec scales linearly with increase in number of nodes, generating representations for one million nodes in less than four hours",
+      "node2vec shows competitive performance with even 10% labeled data and is robust to perturbations in the form of noisy or missing edges"
+    ],
+    "limitations": [
+      "Sample reuse in random walks can introduce some bias in the overall procedure",
+      "Learning the best settings of search parameters adds an overhead, though minimal since node2vec is semi-supervised",
+      "LINE showed worse performance than expected, explained by its inability to reuse samples"
+    ],
+    "summary": "The paper proposes node2vec, an algorithmic framework for learning continuous feature representations for nodes in networks. node2vec learns a mapping of nodes to a low-dimensional feature space that maximizes the likelihood of preserving network neighborhoods of nodes. The key contribution is a flexible notion of a node's network neighborhood, achieved through a family of biased 2nd order random walks governed by two parameters: the return parameter p and the in-out parameter q. These parameters allow the search to smoothly interpolate between breadth-first sampling (BFS), which captures structural equivalence, and depth-first sampling (DFS), which captures homophily. The objective is optimized using stochastic gradient descent with negative sampling, extending the Skip-gram architecture to networks. The paper also extends node features to edge features using simple binary operators (Average, Hadamard, Weighted-L1, Weighted-L2). Experiments on multi-label classification (BlogCatalog, PPI, Wikipedia) and link prediction (Facebook, PPI, arXiv ASTRO-PH) show node2vec outperforms state-of-the-art methods (DeepWalk, LINE, Spectral Clustering) by up to 26.7% on classification and 12.6% on link prediction. The algorithm is semi-supervised, robust to noisy or missing edges, and scales linearly to networks with millions of nodes in a few hours. The Hadamard operator is found to be the most stable for link prediction."
+  }
+}

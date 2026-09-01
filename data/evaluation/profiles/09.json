@@ -1,0 +1,64 @@
+{
+  "case_id": "09",
+  "source_pdf": "09.pdf",
+  "paper_profile": {
+    "title": "The Promises and Perils of Mining GitHub",
+    "abstract": "With over 10 million git repositories, GitHub is becoming one of the most important source of software artifacts on the Internet. Researchers are starting to mine the information stored in GitHub's event logs, trying to understand how its users employ the site to collaborate on software. However, so far there have been no studies describing the quality and properties of the data available from GitHub. We document the results of an empirical study aimed at understanding the characteristics of the repositories in GitHub and how users take advantage of GitHub's main features—namely commits, pull requests, and issues. Our results indicate that, while GitHub is a rich source of data on software development, mining GitHub for research purposes should take various potential perils into consideration. We show, for example, that the majority of the projects are personal and inactive; that GitHub is also being used for free storage and as a Web hosting service; and that almost 40% of all pull requests do not appear as merged, even though they were. We provide a set of recommendations for software engineering researchers on how to approach the data in GitHub.",
+    "keywords": [
+      "Mining software repositories",
+      "git",
+      "GitHub",
+      "code reviews",
+      "bias"
+    ],
+    "research_fields": [
+      "Software Engineering",
+      "Mining Software Repositories"
+    ],
+    "research_problem": "What are the promises and perils of mining GitHub for software engineering research, specifically regarding the quality and properties of data available from GitHub and the biases that can affect research conclusions.",
+    "methods": [
+      "Quantitative analysis of the GHTorrent dataset",
+      "Manual inspection of 434 GitHub repositories",
+      "Exploratory online survey of GitHub users (240 respondents)",
+      "Small follow-up survey of 100 GitHub users (27 respondents)",
+      "Heuristics for detecting pull requests merged outside GitHub (H1-H4)"
+    ],
+    "datasets": [
+      "GHTorrent dataset (January 2014)",
+      "434 randomly selected GitHub repositories",
+      "GitHub Archive"
+    ],
+    "main_contributions": [
+      "Documented nine perils of mining GitHub data for software engineering research",
+      "Provided quantitative and qualitative evidence for each identified peril",
+      "Provided recommendations for researchers on how to approach GitHub data and avoid common pitfalls",
+      "Developed a set of heuristics (H1-H4) to identify pull requests merged outside GitHub"
+    ],
+    "claimed_innovations": [
+      "Identification of nine specific perils in mining GitHub data, including that a repository is not necessarily a project, most projects are personal and inactive, and that GitHub is used for non-software purposes",
+      "Heuristics for detecting pull requests merged outside GitHub facilities",
+      "Demonstration that GitHub's merge status attribute is unreliable, with almost 40% of pull requests not appearing as merged even though they were"
+    ],
+    "experimental_results": [
+      "Of 6.8M public repositories, 3.0M (44%) are base repositories and only 0.6M have been forked at least once",
+      "Median number of commits per project is 6, and 90% of projects have less than 50 commits",
+      "The most active 2.5% of projects account for the same number of commits as the remaining 97.5%",
+      "Approximately 46% of projects have been inactive in the last six months; only 13% were active in the last month",
+      "Median number of days a project is active is 9.9 days; 32% of projects have only been active for one day",
+      "67% of projects have only one committer; 71.6% of repositories are personal",
+      "Only 10% of collaborative projects (268,853 of 2.6 million) used the pull request model at least once",
+      "Median number of pull requests per project is 2; 44.7% of projects have only 1",
+      "Across GitHub, 44% of pull requests are reported as merged; on the 434 project sample only 37% were merged using GitHub facilities, with heuristics identifying an extra 42%",
+      "23% of committers or authors of a commit are not GitHub users",
+      "In the manual sample, 63.4% of repositories were for software development, 12.2% experimental, 8.3% storage, 7.1% academic, 5.8% web",
+      "80% of pull requests have less than 3 comments and less than 2 participants"
+    ],
+    "limitations": [
+      "The exploratory survey had a relatively low number of participants from a biased and self-selected population",
+      "The manual exploration of 434 projects illustrates variety but results are not generalized to other projects",
+      "The reliability of the study depends on the reliability of the GHTorrent dataset, which is a best-effort approach and cannot be a full replica of GitHub",
+      "The heuristics to detect pull requests merged outside GitHub are not complete (may not identify all merged pull requests) nor sound (may lead to false positives, especially H4)"
+    ],
+    "summary": "This empirical study investigates the promises and perils of mining GitHub data for software engineering research. The authors used a mixed-methods approach combining an exploratory survey of 240 GitHub users, quantitative analysis of the GHTorrent dataset, and manual inspection of 434 randomly selected repositories. They identified nine perils: (I) a repository is not necessarily a project (forks must be aggregated with base repositories); (II) most projects have very few commits (median of 6); (III) most projects are inactive (46% inactive in the last six months); (IV) a large portion of repositories are not for software development (only 63.4% of the manual sample); (V) two thirds of projects are personal (71.6% of repositories); (VI) only a fraction of projects use pull requests and their use is skewed; (VII) GitHub records only reworked commits, not original ones, when pull requests are updated; (VIII) most pull requests appear as non-merged even when actually merged (only 37% merged via GitHub facilities, with heuristics identifying an extra 42%); and (IX) many active projects do not conduct all development in GitHub (23% of committers are not GitHub users). The paper also highlights two promises: GitHub provides valuable data for studying code reviews via pull requests, and the interlinking of developers, pull requests, issues, and commits provides a comprehensive view of development activities. The authors developed heuristics (H1-H4) to detect pull requests merged outside GitHub and provide recommendations for researchers on how to select appropriate projects and avoid biases, such as considering projects with a balance of commits and pull requests and more than 2 committers/authors."
+  }
+}

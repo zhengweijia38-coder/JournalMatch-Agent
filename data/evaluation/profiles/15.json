@@ -1,0 +1,79 @@
+{
+  "case_id": "15",
+  "source_pdf": "15.pdf",
+  "paper_profile": {
+    "title": "GloVe: Global Vectors for Word Representation",
+    "abstract": "Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new global log-bilinear regression model that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by training only on the nonzero elements in a word-word co-occurrence matrix, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.",
+    "keywords": [
+      "GloVe",
+      "word representation",
+      "word vectors",
+      "global log-bilinear regression",
+      "co-occurrence matrix",
+      "word analogy"
+    ],
+    "research_fields": [
+      "Natural Language Processing",
+      "Machine Learning"
+    ],
+    "research_problem": "The paper addresses the question of how meaning is generated from corpus co-occurrence statistics and how word vectors can represent that meaning, specifically aiming to construct a model that captures linear directions of meaning (as probed by word analogy tasks) while efficiently leveraging global corpus statistics.",
+    "methods": [
+      "GloVe (Global Vectors) model",
+      "Weighted least squares regression",
+      "Global log-bilinear regression",
+      "AdaGrad optimization",
+      "Stochastic sampling of nonzero co-occurrence elements",
+      "Conditional random field (CRF) for NER",
+      "Singular value decomposition (SVD) baselines",
+      "word2vec (skip-gram and CBOW) comparison models"
+    ],
+    "datasets": [
+      "Word analogy task (19,544 questions)",
+      "WordSim-353",
+      "MC (Miller and Charles)",
+      "RG (Rubenstein and Goodenough)",
+      "SCWS",
+      "RW (Rare Words)",
+      "CoNLL-2003 English NER benchmark",
+      "ACE Phase 2 (2001-02) and ACE-2003",
+      "MUC7 Formal Run test set",
+      "2010 Wikipedia dump (1B tokens)",
+      "2014 Wikipedia dump (1.6B tokens)",
+      "Gigaword 5 (4.3B tokens)",
+      "Gigaword5 + Wikipedia2014 (6B tokens)",
+      "Common Crawl (42B tokens)",
+      "Common Crawl (840B tokens)"
+    ],
+    "main_contributions": [
+      "Proposes GloVe, a new global log-bilinear regression model for unsupervised learning of word representations that combines global matrix factorization and local context window methods",
+      "Analyzes and makes explicit the model properties needed for linear semantic and syntactic regularities to emerge in word vectors",
+      "Trains only on nonzero elements of a word-word co-occurrence matrix, efficiently leveraging statistical information",
+      "Demonstrates state-of-the-art performance of 75% accuracy on the word analogy task",
+      "Shows GloVe outperforms other models on word similarity tasks and named entity recognition",
+      "Provides source code and trained word vectors"
+    ],
+    "claimed_innovations": [
+      "A new global log-bilinear regression model that captures global corpus statistics directly",
+      "A weighted least squares objective that trains only on nonzero co-occurrence elements",
+      "Derivation showing the relationship between the proposed model and skip-gram/ivLBL window-based methods",
+      "A complexity analysis showing the model scales as O(|C|^0.8) under a power-law assumption on co-occurrence distribution"
+    ],
+    "experimental_results": [
+      "GloVe achieves 75% accuracy on the word analogy task (42B token corpus, 300-dim vectors)",
+      "GloVe outperforms word2vec (skip-gram and CBOW) on the analogy task for the same corpus, vocabulary, window size, and training time",
+      "GloVe achieves best results on word similarity tasks (WS353, MC, RG, SCWS, RW) compared to baselines, outperforming CBOW* trained on 100B words while using a corpus less than half the size",
+      "GloVe achieves best F1 on NER across most metrics (Dev 93.2, Test 88.3, ACE 82.9, MUC7 82.2), except CoNLL test where HPCA does slightly better",
+      "Performance on analogy task shows diminishing returns for vectors larger than about 200 dimensions",
+      "Syntactic subtask benefits from small and asymmetric context windows; semantic information benefits from larger windows",
+      "Syntactic performance increases monotonically with corpus size, but semantic performance is better on smaller Wikipedia corpora than larger Gigaword corpus",
+      "Populating X with a 10-word symmetric window, 400K vocabulary, and 6B token corpus takes about 85 minutes; a single training iteration for 300-dim vectors takes 14 minutes using 32 cores",
+      "word2vec performance decreases if negative samples increase beyond about 10"
+    ],
+    "limitations": [
+      "The choice of alpha = 3/4 for the weighting function is offered only with empirical motivation",
+      "The model trained on the 840B token corpus did not lowercase the vocabulary, so results are not directly comparable",
+      "A rigorous quantitative comparison of GloVe with word2vec is complicated by many parameters affecting performance; some parameters were set to defaults assuming near-optimality"
+    ],
+    "summary": "The paper introduces GloVe (Global Vectors), a new global log-bilinear regression model for learning word vector representations. The authors analyze the model properties needed for linear semantic and syntactic regularities to emerge in word vectors, arguing that ratios of co-occurrence probabilities are the appropriate starting point. They derive a weighted least squares objective that trains only on the nonzero elements of a word-word co-occurrence matrix, combining the advantages of global matrix factorization methods (like LSA) and local context window methods (like skip-gram). The model uses a weighting function f(x) with parameters xmax=100 and alpha=3/4, trained with AdaGrad. The paper shows the relationship between GloVe and skip-gram/ivLBL models, and provides a complexity analysis showing the model scales as O(|C|^0.8) under a power-law assumption. Experiments on the word analogy task (75% accuracy on a 42B token corpus), five word similarity tasks, and the CoNLL-2003 NER benchmark show GloVe outperforms other models including word2vec, SVD baselines, HPCA, HSMN, and CW. The paper also analyzes the effects of vector length, context window size/type, corpus size, and training time on performance."
+  }
+}
