@@ -24,6 +24,7 @@ JournalMatch-Agent是一个面向计算机科学论文的本地期刊推荐系�
 最终，DeepSeek 只允许基于真实检索候选、论文质量评价和期刊 Scope 生成 Grounded Top-K Recommendation。
 
 当前本地数据库包含约 **291 本计算机领域期刊**。
+![示例图片](pdf1.png)
 
 ---
 
