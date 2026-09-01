@@ -1,0 +1,40 @@
+{
+  "dataset_size": 5,
+  "semantic_retrieval_metrics": {
+    "hit_at_5": 1.0,
+    "hit_at_10": 1.0,
+    "precision_at_5": 0.4,
+    "precision_at_10": 0.28,
+    "recall_at_5": 0.5,
+    "recall_at_10": 0.67,
+    "recall_at_20": 0.8800000000000001,
+    "ndcg_at_5": 0.5486775211309624,
+    "ndcg_at_10": 0.6381571471295846,
+    "mrr": 0.7666666666666667
+  },
+  "hybrid_filtering_metrics": {
+    "constraint_satisfaction_rate": 1.0,
+    "filter_leakage_count": 0
+  },
+  "reranking_before_metrics": {
+    "hit_at_5": 1.0,
+    "mrr": 0.9,
+    "ndcg_at_5": 0.6362766049088064,
+    "ndcg_at_10": 0.7133425878028382
+  },
+  "reranking_after_metrics": {
+    "hit_at_5": 1.0,
+    "mrr": 1.0,
+    "ndcg_at_5": 0.8854280114103575,
+    "ndcg_at_10": 0.913548269228641
+  },
+  "reranking_delta": {
+    "hit_at_5": 0.0,
+    "mrr": 0.09999999999999998,
+    "ndcg_at_5": 0.2491514065015511,
+    "ndcg_at_10": 0.20020568142580275
+  },
+  "recommendation_hard_metrics": null,
+  "recommendation_included": false,
+  "runtime_seconds": 70.37487229995895
+}
